@@ -22,27 +22,27 @@
 
 <nav class="navbar navbar-expand-lg navbar-green">
   <a class="navbar-brand" href="#">
-    <img src="logo_perusahaan.png" alt="SiTani"> <!-- Ganti logo_perusahaan.png dengan nama file logo perusahaan Anda -->
+    <img src="{{ URL('img/SiTani.png') }}" alt="SiTani"> <!-- Ganti logo_perusahaan.png dengan nama file logo perusahaan Anda -->
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mx-auto">
+    <ul class="navbar-nav mx-auto nav-underline">
       <li class="nav-item active">
-        <a class="nav-link" href="#">User</a>
+        <a class="nav-link" href="/dashboardadmin">User</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Produk</a>
+        <a class="nav-link" href="/dashboardproduk">Produk</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Workshop</a>
+        <a class="nav-link" href="/dashboardworkshop">Workshop</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Artikel</a>
+        <a class="nav-link" href="dashboardartikel">Artikel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Mitra</a>
+        <a class="nav-link" href="dashboardmitra">Mitra</a>
       </li>
     </ul>
     <ul class="navbar-nav">
