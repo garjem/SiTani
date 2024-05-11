@@ -22,18 +22,18 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Nama Pelanggan</th>
-              <th>Email</th>
-              <th>Kata Sandi</th>
+              <th>Judul</th>
+              <th>Tanggal</th>
+              <th>Penyelenggara</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>azri</td>
-              <td>azri@gmail.com</td>
-              <td>********</td>
+              <td>Tumbuhan yang Cocok untuk Bertani</td>
+              <td>9 Mei 2024</td>
+              <td>Wincorp</td>
               <td><button class="btn btn-primary">Ubah</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->

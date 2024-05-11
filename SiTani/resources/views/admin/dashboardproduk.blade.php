@@ -22,18 +22,18 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Nama Pelanggan</th>
-              <th>Email</th>
-              <th>Kata Sandi</th>
+              <th>Nama Produk</th>
+              <th>Harga</th>
+              <th>Stok</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>azri</td>
-              <td>azri@gmail.com</td>
-              <td>********</td>
+              <td>Wortel</td>
+              <td>5.000</td>
+              <td>Stok</td>
               <td><button class="btn btn-primary">Ubah</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->

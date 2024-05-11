@@ -22,18 +22,18 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>Nama Pelanggan</th>
+              <th>Nama Mitra</th>
+              <th>No. Handphone</th>
               <th>Email</th>
-              <th>Kata Sandi</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>azri</td>
-              <td>azri@gmail.com</td>
-              <td>********</td>
+              <td>Wincorp</td>
+              <td>0857xxxxxxxx</td>
+              <td>wincorp@gmail.com</td>
               <td><button class="btn btn-primary">Ubah</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->

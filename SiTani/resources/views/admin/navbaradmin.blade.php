@@ -30,13 +30,19 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-auto">
       <li class="nav-item active">
+        <a class="nav-link" href="#">User</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Produk</a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="#">Workshop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Artikel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Belanja</a>
+        <a class="nav-link" href="#">Mitra</a>
       </li>
     </ul>
     <ul class="navbar-nav">
