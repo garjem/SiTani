@@ -50,6 +50,7 @@
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Profil</a>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Ubah Profil</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Pengaturan</a></li>
             <li><a class="dropdown-item" href="#">FAQ</a></li>
             <li><a class="dropdown-item" href="#">Pengajuan Mitra</a></li>
             <li><a class="dropdown-item text-danger" href="#">Keluar</a></li>
@@ -58,6 +59,27 @@
     </ul>
   </div>
 </nav>
+
+<!-- modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Pengaturan</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-light" type="button">Cookies and Policy</button>
+          <button class="btn btn-light" type="button">Privasi dan Keamanan</button>
+          <button class="btn btn-light" type="button">Tema dan Tampilan</button>
+          <button class="btn btn-light" type="button">Bahasa</button>
+          <button class="btn btn-danger" type="button">Hapus Akun</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
