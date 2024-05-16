@@ -46,8 +46,14 @@
       </li>
     </ul>
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Profil</a>
+      <li class="nav-item dropstart">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Profil</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ubah Profil</a></li>
+            <li><a class="dropdown-item" href="#">FAQ</a></li>
+            <li><a class="dropdown-item" href="#">Pengajuan Mitra</a></li>
+            <li><a class="dropdown-item text-danger" href="#">Keluar</a></li>
+          </ul>
       </li>
     </ul>
   </div>
