@@ -29,3 +29,19 @@ Route::get('/faq', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboardadmin', function () {
+    return view('admin.dashboard'); 
+});
+Route::get('/dashboardartikel', function () {
+    return view('admin.dashboardartikel'); 
+});
+Route::get('/dashboardmitra', function () {
+    return view('admin.dashboardmitra'); 
+});
+Route::get('/dashboardproduk', function () {
+    return view('admin.dashboardproduk'); 
+});
+Route::get('/dashboardworkshop', function () {
+    return view('admin.dashboardworkshop'); 
+});
