@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\faqController;
+use App\Http\Controllers\BelanjaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +19,12 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/belanja',[BelanjaController::class,'index']);
+
 Auth::routes();
 
-Route::get('/faq', function () {
-    return view('Faq'); 
-});
+Route::get('/Faq', [faqController::class, 'index'])->name('Faq');
+Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
 
 Auth::routes();
 
