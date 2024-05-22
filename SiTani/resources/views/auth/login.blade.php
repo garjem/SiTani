@@ -72,7 +72,7 @@
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid justify-content-center">
-                <span class="navbar-brand text-white" href="#">Sitandsfdsi</a>
+                <span class="navbar-brand text-white" href="#">Sitani</a>
             </div>
         </nav>
     </header>
