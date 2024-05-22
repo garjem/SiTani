@@ -16,6 +16,10 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        .navbar.bg-body-tertiary {
+            background-color: #58A399 !important;
+        }
+
         body {
             background-color: #f8f9fa;
         }
@@ -91,6 +95,13 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-brand text-white " href="#">Sitani</a>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <div class="card-container">
             <div class="left-card">

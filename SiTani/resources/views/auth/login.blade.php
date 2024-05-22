@@ -10,6 +10,10 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        .navbar.bg-body-tertiary {
+            background-color: #58A399 !important;
+        }
+
         body {
             background-color: #f8f9fa;
         }
@@ -65,10 +69,17 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-brand text-white" href="#">Sitani</a>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <div class="card">
             <div class="card-header text-center">
-                <h4>Sign In</h4>
+                <h4>Selamat Datang</h4>
                 <p>Enter your email and password to sign in</p>
             </div>
             <div class="card-body">
