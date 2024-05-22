@@ -10,4 +10,10 @@ class Faq extends Model
     use HasFactory;
     protected $table = "faq";
     protected $fillable =["header", "content"];
+
+    public function faqAdmin()
+    {
+        return $this->hasMany(faqAdmin::class);
+
+    }
 }
