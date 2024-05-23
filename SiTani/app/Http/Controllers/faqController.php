@@ -21,39 +21,21 @@ class faqController extends Controller
 
     Public function create (Request $request)
     {
-        faq::create ([
-            'id' => $request-> id,
+        Faq::create ([
             'header' => $request->header,
             'content'=> $request->content,
 
         ]);
-        return redirect ('/faqAdmin');
+        return back();
     }
 
-    public function update (Request $request, $id)
-    {
-        $faq = faq::findorfail($id);
-        $faq-> update([
-            'id' => $request->id,
-            'header' => $request->header,
-            'content' => $request->content,
-            
-        ]);
-        return  redirect('/faqAdmin');
-    
-    }
     public function input() {
         return view ('faqAdmin/input');
 
     }
-    public function edit($id)
-    {
-        $faq = faq::where('id',$id)->first();
-        return redirect()->route('editPegawai');
-    }
-
+    
     public function delete($id){
-        $delete=faq::where('id', $id);
+        $delete=Faq::where('id', $id);
         $delete->delete();
         return back();
 

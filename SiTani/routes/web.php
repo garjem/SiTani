@@ -25,7 +25,8 @@ Auth::routes();
 
 Route::get('/Faq', [faqController::class, 'index'])->name('Faq');
 Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
-
+Route::post('/inputFaq', [faqController::class, 'create'])->name('inputFaq');
+Route::get('/deleteFaq/{id}', [faqController::class, 'delete'])->name('deleteFaq');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

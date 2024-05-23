@@ -42,8 +42,7 @@
                                         <th scope="row">{{ $data->id }}</th>
                                         <td>{{ $data->header }}</td>
                                         <td>{{ $data->content }}</td>
-                                        <td><a href="" class="btn btn-danger btn-sm">Hapus</a></td>
-                                        <td><a href="" class="btn btn-info btn-sm">Update</a></td>
+                                        <td><a href="{{ URL('deleteFaq/'.$data->id) }}" class="btn btn-danger btn-sm">Hapus</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -64,26 +63,24 @@
                                     <h1 class="modal-title fs-5" id="staticBackdropLabel">FORM FAQ</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <form method= 'POST' action="aksi_crud.php">
-                                <div class="modal-body">
-                                
-                                    <div class="mb-3">
-                                        <label  class="form-label">Pertanyaan</label>
-                                        <input type="teks" class="form-control" name ="tper" id="" placeholder="Masukan Pertanyaan">
-                                        </div>
-
+                                <form method= 'POST' action="{{ route('inputFaq') }}">
+                                    @csrf 
+                                    <div class="modal-body">
+                                    
                                         <div class="mb-3">
-                                        <label class="form-label">Jawaban</label>
-                                        <textarea class="form-control" name=tjawab id="" rows="3" placeholder="Masukan Jawaban"></textarea>
+                                            <label  class="form-label">Pertanyaan</label>
+                                            <input type="teks" class="form-control" name ="header" id="" placeholder="Masukan Pertanyaan">
+                                            </div>
+
+                                            <div class="mb-3">
+                                            <label class="form-label">Jawaban</label>
+                                            <textarea class="form-control" name=content id="" rows="3" placeholder="Masukan Jawaban"></textarea>
+                                            </div>
                                         </div>
-
-                                    </form> 
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary" name="bsimpan" >Simpan </button>
-                                </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-primary" name="bsimpan" >Simpan </button>
+                                    </div>
                                 </form>
                                 </div>
                             </div>
