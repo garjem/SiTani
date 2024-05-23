@@ -24,7 +24,7 @@
         }
 
         body {
-            background-color: #f0f4f7;
+            background-color: #FFFFFF;
             margin: 0;
         }
 
@@ -95,6 +95,7 @@
         .text-center {
             margin-top: 10px;
         }
+        
         .form-footer {
             text-align: center;
         }
@@ -102,9 +103,15 @@
         .spacer {
             width: 20px;
         }
+
         .form-footer a.login-link {
             color: black; /* Change the link color to black */
             font-weight: bold; /* Make the link text bold */
+            text-decoration: none; /* Remove underline */
+        }
+        
+        .form-footer a.login-link:hover {
+            text-decoration: underline; /* Add underline on hover */
         }
     </style>
 </head>
@@ -151,4 +158,3 @@
     </div>
 </body>
 </html>
-
