@@ -95,9 +95,16 @@
         .text-center {
             margin-top: 10px;
         }
+        .form-footer {
+            text-align: center;
+        }
 
         .spacer {
             width: 20px;
+        }
+        .form-footer a.login-link {
+            color: black; /* Change the link color to black */
+            font-weight: bold; /* Make the link text bold */
         }
     </style>
 </head>
@@ -136,9 +143,12 @@
                         <button type="submit" class="btn btn-block">Masuk</button>
                     </div>
                 </form>
-                <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar!</a></p>
+                <div class="form-footer mt-3">
+                    <p>Belum punya akun? <a href="{{ route('register') }}" class="login-link">Daftar!</a></p>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
