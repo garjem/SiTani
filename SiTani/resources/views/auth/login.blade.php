@@ -18,12 +18,23 @@
             background-color: #58A399 !important;
         }
 
+        .navbar-brand img {
+            height: 30px; /* Set a default height */
+            width: auto; /* Maintain aspect ratio */
+        }
+
         body {
             background-color: #f0f4f7;
-            display: flex;
-            height: 100vh;
-            flex-direction: column;
+            margin: 0;
         }
+
+        .full-height-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 56px); /* Height of the navbar */
+        }
+
         .container {
             max-width: 900px;
             background-color: white;
@@ -33,6 +44,7 @@
             display: flex;
             flex-direction: row;
         }
+
         .image-section {
             flex: 1;
             background-image: url('/assets/sayuran.png'); /* Ganti 'your-image.jpg' dengan nama file gambar Anda */
@@ -41,22 +53,26 @@
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
         }
+
         .form-section {
             flex: 1;
             padding: 50px;
         }
+
         .btn-block {
             background-color: #58A399;
             color: white;
-            color: #fff;
         }
+
         .btn-block:hover {
             background-color: #3aafa9;
         }
+
         .form-group {
             position: relative;
             margin-bottom: 1.5rem;
         }
+
         .form-control {
             padding-top: calc(var(--label-top-position) + 20px);
             height: var(--input-height); /* Use the CSS variable for height */
@@ -65,6 +81,7 @@
             border: 1px solid #ccc; /* Optional: Add a border for better visibility */
             border-radius: var(--input-border-radius); /* Use the CSS variable for border radius */
         }
+
         .form-group label {
             position: absolute;
             top: var(--label-top-position); /* Use the CSS variable for top position */
@@ -74,9 +91,11 @@
             transition: all 0.2s ease-in-out;
             pointer-events: none;
         }
+
         .text-center {
             margin-top: 10px;
         }
+
         .spacer {
             width: 20px;
         }
@@ -86,35 +105,39 @@
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid justify-content-center">
-                <span class="navbar-brand text-white " href="#">Sitani</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/SiTani.png" alt="SiTani" class="navbar-logo"> <!-- Ganti '/path/to/your/image.png' dengan path gambar Anda -->
+                </a>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <div class="image-section"></div>
-        <div class="spacer"></div> <!-- Spacer untuk memberikan jarak -->
-        <div class="form-section">
-            <h1 class="mb-4">Selamat Datang Kembali!</h2>
-            <p>Masukkan alamat email dan password!</p>
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input id="password" type="password" class="form-control" name="password" required>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Remember me</label>
-                </div>
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-block">Masuk</button>
-                </div>
-            </form>
-            <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar!</a></p>
+    <div class="full-height-container">
+        <div class="container">
+            <div class="image-section"></div>
+            <div class="spacer"></div> <!-- Spacer untuk memberikan jarak -->
+            <div class="form-section">
+                <h1 class="mb-4">Selamat Datang Kembali!</h1>
+                <p>Masukkan alamat email dan password!</p>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" class="form-control" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-block">Masuk</button>
+                    </div>
+                </form>
+                <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar!</a></p>
+            </div>
         </div>
     </div>
 </body>
