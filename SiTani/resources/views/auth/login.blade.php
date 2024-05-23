@@ -135,16 +135,16 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Email</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Kata Sandi</label>
                         <input id="password" type="password" class="form-control" name="password" required>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember me</label>
+                        <label for="remember">Ingat Saya</label>
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-block">Masuk</button>
