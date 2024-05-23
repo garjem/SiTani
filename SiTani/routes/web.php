@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\faqController;
+use App\Http\Controllers\BelanjaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,29 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/belanja',[BelanjaController::class,'index']);
+
 Auth::routes();
 
-Route::get('/faq', function () {
-    return view('Faq'); 
-});
+Route::get('/Faq', [faqController::class, 'index'])->name('Faq');
+Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboardadmin', function () {
+    return view('admin.dashboard'); 
+});
+Route::get('/dashboardartikel', function () {
+    return view('admin.dashboardartikel'); 
+});
+Route::get('/dashboardmitra', function () {
+    return view('admin.dashboardmitra'); 
+});
+Route::get('/dashboardproduk', function () {
+    return view('admin.dashboardproduk'); 
+});
+Route::get('/dashboardworkshop', function () {
+    return view('admin.dashboardworkshop'); 
+});
