@@ -39,7 +39,7 @@
             color: #fff;
         }
         .btn-block:hover {
-            background-color: #45a049;
+            background-color: #3aafa9;
         }
         .form-group {
             position: relative;

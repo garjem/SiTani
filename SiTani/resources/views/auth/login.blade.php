@@ -6,6 +6,14 @@
     <title>SiTani - Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        :root {
+            --input-bg-color: #E0E0E0; /* Customizable background color */
+            --input-height: 70px; /* Customizable input height */
+            --input-font-size: 16px; /* Customizable font size */
+            --label-top-position: 10px; /* Customizable label top position */
+            --input-border-radius: 10px; /* Customizable border radius */
+        }
+
         body {
             background-color: #f0f4f7;
             display: flex;
@@ -36,18 +44,44 @@
             padding: 50px;
         }
         .btn-block {
-            background-color: #5bc0be;
+            background-color: #58A399;
             color: white;
+            color: #fff;
         }
         .btn-block:hover {
             background-color: #3aafa9;
         }
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            padding-top: calc(var(--label-top-position) + 20px);
+            height: var(--input-height); /* Use the CSS variable for height */
+            font-size: var(--input-font-size); /* Use the CSS variable for font size */
+            background-color: var(--input-bg-color); /* Use the CSS variable for background color */
+            border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+            border-radius: var(--input-border-radius); /* Use the CSS variable for border radius */
+        }
+
+        .form-group label {
+            position: absolute;
+            top: var(--label-top-position); /* Use the CSS variable for top position */
+            left: 15px;
+            color: #999;
+            font-size: 14px;
+            transition: all 0.2s ease-in-out;
+            pointer-events: none;
+        }
+        
         .text-center {
             margin-top: 10px;
         }
         .spacer {
             width: 20px;
         }
+        
     </style>
 </head>
     <div class="container">
