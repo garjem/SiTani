@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiTani - Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Sign In | SiTani</title>
     <style>
         :root {
             --input-bg-color: #E0E0E0; /* Customizable background color */
@@ -14,11 +14,13 @@
             --input-border-radius: 10px; /* Customizable border radius */
         }
 
+        .navbar.bg-body-tertiary {
+            background-color: #58A399 !important;
+        }
+
         body {
             background-color: #f0f4f7;
             display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
             flex-direction: column;
         }
@@ -55,7 +57,6 @@
             position: relative;
             margin-bottom: 1.5rem;
         }
-
         .form-control {
             padding-top: calc(var(--label-top-position) + 20px);
             height: var(--input-height); /* Use the CSS variable for height */
@@ -64,7 +65,6 @@
             border: 1px solid #ccc; /* Optional: Add a border for better visibility */
             border-radius: var(--input-border-radius); /* Use the CSS variable for border radius */
         }
-
         .form-group label {
             position: absolute;
             top: var(--label-top-position); /* Use the CSS variable for top position */
@@ -74,21 +74,27 @@
             transition: all 0.2s ease-in-out;
             pointer-events: none;
         }
-        
         .text-center {
             margin-top: 10px;
         }
         .spacer {
             width: 20px;
         }
-        
     </style>
 </head>
+<body>
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid justify-content-center">
+                <span class="navbar-brand text-white " href="#">Sitani</a>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <div class="image-section"></div>
         <div class="spacer"></div> <!-- Spacer untuk memberikan jarak -->
         <div class="form-section">
-            <h2 class="mb-4">Selamat Datang Kembali!</h2>
+            <h1 class="mb-4">Selamat Datang Kembali!</h2>
             <p>Masukkan alamat email dan password!</p>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
