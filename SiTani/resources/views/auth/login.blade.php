@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
