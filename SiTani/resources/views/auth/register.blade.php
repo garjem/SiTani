@@ -27,12 +27,14 @@
         }
         .container {
             max-width: 400px;
-            margin-top: 50px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
         .card {
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            border-radius: 20px; /* Make the card corners more rounded */
         }
         .card-body {
             padding-top: 3;
