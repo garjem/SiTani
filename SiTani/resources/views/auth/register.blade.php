@@ -17,6 +17,10 @@
         .navbar.bg-body-tertiary {
             background-color: #58A399 !important;
         }
+        .navbar-brand img {
+            height: 30px; /* Set a default height */
+            width: auto; /* Maintain aspect ratio */
+        }
 
         body {
             background-color: #F2F2F2;
@@ -79,7 +83,9 @@
     <header>
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid justify-content-center">
-                <span class="navbar-brand text-white " href="#">Sitani</a>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/SiTani.png" alt="SiTani" class="navbar-logo"> <!-- Ganti '/path/to/your/image.png' dengan path gambar Anda -->
+                </a>
             </div>
         </nav>
     </header>
