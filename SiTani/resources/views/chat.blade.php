@@ -93,6 +93,7 @@
         cursor: pointer;
         z-index: 1000;
     }
+
     .chat-popup {
         display: none;
         position: fixed;
@@ -105,6 +106,7 @@
         z-index: 1000;
         border-radius: 10px;
     }
+
     .chat-header {
         background-color: #58A399;
         padding: 10px;
@@ -115,34 +117,39 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .chat-body {
         max-height: 200px;
         overflow-y: auto;
         padding: 10px;
     }
+
     .chat-footer {
         padding: 10px;
         border-top: 1px solid #ccc;
     }
+
     .contact-list {
         list-style-type: none;
         padding: 0;
         margin: 0;
     }
+
     .contact-item {
         display: flex;
         align-items: center;
         padding: 10px;
         cursor: pointer;
     }
+
     .contact-item img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         margin-right: 10px;
     }
+
     .contact-item:hover {
         background-color: #f1f1f1;
     }
-
 </style>
