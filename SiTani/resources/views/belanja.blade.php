@@ -182,7 +182,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Include Chat Feature -->
         @include('chat')
     </main>
