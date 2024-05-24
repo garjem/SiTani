@@ -41,3 +41,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var chatButton = document.getElementById('chatButton');
+        var chatPopup = document.getElementById('chatPopup');
+        var closeChat = document.getElementById('closeChat');
+        var contactItems = document.querySelectorAll('.contact-item');
+
+        chatButton.addEventListener('click', function() {
+            chatPopup.style.display = 'block';
+        });
+
+        closeChat.addEventListener('click', function() {
+            chatPopup.style.display = 'none';
+        });
