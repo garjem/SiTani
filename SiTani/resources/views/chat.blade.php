@@ -56,3 +56,26 @@
         closeChat.addEventListener('click', function() {
             chatPopup.style.display = 'none';
         });
+
+        // Menutup pop-up jika pengguna mengklik di luar pop-up
+        window.addEventListener('click', function(event) {
+            if (event.target == chatPopup) {
+                chatPopup.style.display = 'none';
+            }
+        });
+
+        contactItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var chatId = this.getAttribute('data-chat');
+                openChat(chatId);
+            });
+        });
+
+        function openChat(chatId) {
+            // Di sini Anda bisa mengganti konten chat sesuai dengan toko yang dipilih
+            // Sebagai contoh, kita hanya akan mengubah teks di dalam elemen chat-body
+            var chatBody = document.querySelector('.chat-body');
+            chatBody.innerHTML = 'Chat dengan ' + chatId;
+        }
+    });
+</script>
