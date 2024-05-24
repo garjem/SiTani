@@ -129,5 +129,11 @@
         padding: 0;
         margin: 0;
     }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+    }
 
 </style>
