@@ -141,5 +141,8 @@
         border-radius: 50%;
         margin-right: 10px;
     }
+    .contact-item:hover {
+        background-color: #f1f1f1;
+    }
 
 </style>
