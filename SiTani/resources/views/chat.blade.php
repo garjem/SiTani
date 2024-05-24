@@ -14,23 +14,23 @@
             <div id="contactList" class="contact-list">
                 <ul>
                     <li class="contact-item" data-chat="Toko 1">
-                        <img src="toko1.png" alt="Toko 1">
+                        <img src="/person/toko1.jpg" alt="Toko 1">
                         <span>Toko 1</span>
                     </li>
                     <li class="contact-item" data-chat="Toko 2">
-                        <img src="toko2.png" alt="Toko 2">
+                        <img src="/person/toko2.jpg" alt="Toko 2">
                         <span>Toko 2</span>
                     </li>
                     <li class="contact-item" data-chat="Toko 3">
-                        <img src="toko3.png" alt="Toko 3">
+                        <img src="/person/toko3.jpg" alt="Toko 3">
                         <span>Toko 3</span>
                     </li>
                     <li class="contact-item" data-chat="Toko 4">
-                        <img src="toko4.png" alt="Toko 4">
+                        <img src="/person/toko4.jpg" alt="Toko 4">
                         <span>Toko 4</span>
                     </li>
                     <li class="contact-item" data-chat="Toko 5">
-                        <img src="toko5.png" alt="Toko 5">
+                        <img src="/person/toko5.jpg" alt="Toko 5">
                         <span>Toko 5</span>
                     </li>
                 </ul>
@@ -117,8 +117,8 @@
         right: 20px;
         border: 1px solid #ccc;
         background-color: white;
-        width: 400px;
-        height: 500px;
+        width: 600px;
+        height: 400px;
         resize: both;
         overflow: hidden;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
