@@ -86,10 +86,13 @@
                     </ul>
                 </div>
                 <a class="navbar-brand" href="#">
-                    <img src="keranjang.png" width="40" height="40">
+                    <img src="chat.png" width="30" height="30">
                 </a>
                 <a class="navbar-brand" href="#">
-                    <img src="profile.png" width="40" height="40">
+                    <img src="keranjang.png" width="30" height="30">
+                </a>
+                <a class="navbar-brand" href="#">
+                    <img src="profile.png" width="30" height="30">
                 </a>
             </div>
         </nav>
