@@ -124,5 +124,10 @@
         padding: 10px;
         border-top: 1px solid #ccc;
     }
+    .contact-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
 
 </style>
