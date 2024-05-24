@@ -39,6 +39,14 @@
             display: flex;
             flex-direction: row;
         }
+        .image-section {
+            flex: 1;
+            background-image: url('/assets/sayuran.png'); /* Ganti 'your-image.jpg' dengan nama file gambar Anda */
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
         .form-section {
             flex: 1;
             padding: 50px;
