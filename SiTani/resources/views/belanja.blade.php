@@ -77,6 +77,18 @@
             cursor: pointer;
             z-index: 1000;
         }
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
