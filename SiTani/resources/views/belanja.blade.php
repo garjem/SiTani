@@ -63,6 +63,10 @@
             background-color: #fff;
             border: 1px solid #ccc;
         }
+        .btn-heart img {
+            width: 24px;
+            height: 24px;
+        }
 
         .btn-love {
             border: none;
