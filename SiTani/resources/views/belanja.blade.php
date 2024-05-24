@@ -89,6 +89,16 @@
             z-index: 1000;
             border-radius: 10px;
         }
+        .chat-header {
+            background-color: #58A399;
+            padding: 10px;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
