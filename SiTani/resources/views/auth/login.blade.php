@@ -20,6 +20,10 @@
             height: 30px; /* Set a default height */
             width: auto; /* Maintain aspect ratio */
         }
+        body {
+            background-color: #FFFFFF;
+            margin: 0;
+        }
         .form-section {
             flex: 1;
             padding: 50px;
