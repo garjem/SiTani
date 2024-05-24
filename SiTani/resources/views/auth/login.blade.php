@@ -30,6 +30,15 @@
             align-items: center;
             height: calc(100vh - 56px); /* Height of the navbar */
         }
+        .container {
+            max-width: 1200px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+        }
         .form-section {
             flex: 1;
             padding: 50px;
