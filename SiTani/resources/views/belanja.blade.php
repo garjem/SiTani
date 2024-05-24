@@ -99,6 +99,11 @@
             justify-content: space-between;
             align-items: center;
         }
+        .chat-body {
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
