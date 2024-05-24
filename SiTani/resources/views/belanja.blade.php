@@ -9,6 +9,9 @@
         .navbar.bg-body-tertiary {
             background-color: #58A399 !important;
         }
+        .navbar-nav .nav-link {
+            color: white;
+        }
 
         .card {
             display: flex;
