@@ -65,60 +65,6 @@
             border-top-right-radius: 25px;
             border-bottom-right-radius: 25px; 
         }
-        /* Styling tombol chat */
-        .chat-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #58A399;
-            border: none;
-            border-radius: 50%;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        /* Styling pop-up chat */
-        .chat-popup {
-            display: none;
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            z-index: 1000;
-        }
-
-        .chat-header, .chat-footer {
-            padding: 10px;
-            background-color: #58A399;
-            color: #fff;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .chat-footer {
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        .chat-body {
-            padding: 10px;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .close-chat {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 20px;
-            cursor: pointer;
-            float: right;
-        }
     </style>
 </head>
 <body>
@@ -236,52 +182,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tombol Chat -->
-        <button id="chatButton" class="chat-button">
-            <img src="chat.png" alt="Chat Icon" width="30" height="30">
-        </button>
-
-        <!-- Pop-Up Chat -->
-        <div id="chatPopup" class="chat-popup">
-            <div class="chat-header">
-                <span>Chat dengan Toko</span>
-                <button id="closeChat" class="close-chat">&times;</button>
-            </div>
-            <div class="chat-body">
-                <!-- Isi chat di sini -->
-                <p>Selamat datang di layanan chat kami!</p>
-            </div>
-            <div class="chat-footer">
-                <input type="text" placeholder="Ketik pesan...">
-                <button type="submit">Kirim</button>
-            </div>
-        </div>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var chatButton = document.getElementById('chatButton');
-            var chatPopup = document.getElementById('chatPopup');
-            var closeChat = document.getElementById('closeChat');
-
-            chatButton.addEventListener('click', function() {
-                chatPopup.style.display = 'block';
-            });
-
-            closeChat.addEventListener('click', function() {
-                chatPopup.style.display = 'none';
-            });
-
-            // Menutup pop-up jika pengguna mengklik di luar pop-up
-            window.addEventListener('click', function(event) {
-                if (event.target == chatPopup) {
-                    chatPopup.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
-
-
-
-
