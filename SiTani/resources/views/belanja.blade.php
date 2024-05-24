@@ -12,7 +12,10 @@
         .navbar-nav .nav-link {
             color: white;
         }
-
+        .search-form {
+            position: relative;
+            margin-top: 10px; /* Jarak ke bawah */
+        }
         .card {
             display: flex;
             flex-direction: column;
