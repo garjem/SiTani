@@ -23,7 +23,7 @@
         }
 
         body {
-            background-color: #FFFFFF;
+            background-color: #F2F2F2;
         }
         .container {
             max-width: 400px;
@@ -78,10 +78,6 @@
         .form-header h1,
         .form-header p {
             margin: 0;
-        }
-        .form-footer a.login-link {
-            color: black; /* Change the link color to black */
-            font-weight: bold; /* Make the link text bold */
         }
     </style>
 </head>
@@ -151,7 +147,7 @@
             </div>
         </div>
         <div class="form-footer mt-3">
-            <p>Sudah bergabung? <a href="{{ route('login') }}" class="login-link">Masuk!</a></p>
+            <p>Sudah bergabung? <a href="{{ route('login') }}">Masuk!</a></p>
         </div>
     </div>
 </body>
