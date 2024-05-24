@@ -21,6 +21,14 @@
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
         }
+        
+        .search-form img {
+            position: absolute;
+            left: 10px; /* Jarak gambar dari kiri */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px; /* Sesuaikan dengan lebar gambar */
+        }
         .card {
             display: flex;
             flex-direction: column;
