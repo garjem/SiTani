@@ -24,6 +24,12 @@
             background-color: #FFFFFF;
             margin: 0;
         }
+        .full-height-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 56px); /* Height of the navbar */
+        }
         .form-section {
             flex: 1;
             padding: 50px;
