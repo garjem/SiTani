@@ -65,6 +65,18 @@
             border-top-right-radius: 25px;
             border-bottom-right-radius: 25px; 
         }
+        /* Styling tombol chat */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #58A399;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
