@@ -24,6 +24,13 @@
             width: 20px; /* Sesuaikan ukuran sesuai keinginan Anda */
             height: 20px; /* Sesuaikan ukuran sesuai keinginan Anda */
         }
+        .form-control {
+            padding-left: 40px; /* Sesuaikan dengan lebar gambar + margin */
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
         .card {
             display: flex;
             flex-direction: column;
