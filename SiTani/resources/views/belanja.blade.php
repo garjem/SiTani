@@ -16,6 +16,11 @@
             position: relative;
             margin-top: 10px; /* Jarak ke bawah */
         }
+        .search-form .form-control {
+            padding-left: 40px; /* Sesuaikan dengan lebar gambar */
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
         .card {
             display: flex;
             flex-direction: column;
