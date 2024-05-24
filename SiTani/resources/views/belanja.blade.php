@@ -216,6 +216,11 @@
                     </li>
                 </ul>
             </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Ketik pesan...">
+                <button type="submit">Kirim</button>
+            </div>
+        </div>
     </main>
 </body>
 </html>
