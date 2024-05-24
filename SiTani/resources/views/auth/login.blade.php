@@ -16,7 +16,10 @@
         .navbar.bg-body-tertiary {
             background-color: #58A399 !important;
         }
-        
+        .navbar-brand img {
+            height: 30px; /* Set a default height */
+            width: auto; /* Maintain aspect ratio */
+        }
         .form-section {
             flex: 1;
             padding: 50px;
