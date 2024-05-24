@@ -11,7 +11,7 @@
             <span>Chat dengan Toko</span>
             <button id="closeChat" class="close-chat">&times;</button>
         </div>
-        <div class="chat-body">
+        <div class="chat-content">
             <ul class="contact-list">
                 <li class="contact-item" data-chat="chat1">
                     <img src="toko1.png" alt="Toko 1">
@@ -34,6 +34,10 @@
                     <span>Toko 5</span>
                 </li>
             </ul>
+        </div>
+        <div id="chatBody" class="chat-body">
+                <button id="backButton" class="back-button" style="display: none;">Back</button>
+                <div id="chatContent">Pilih toko untuk memulai chat</div>
         </div>
         <div class="chat-footer">
             <input type="text" placeholder="Ketik pesan...">
