@@ -31,6 +31,14 @@
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
         }
+        .btn {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-left: 10px;
+            
+        }
         .card {
             display: flex;
             flex-direction: column;
