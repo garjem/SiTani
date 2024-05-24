@@ -12,7 +12,10 @@
         .navbar-nav .nav-link {
             color: white;
         }
-
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
         .card {
             display: flex;
             flex-direction: column;
