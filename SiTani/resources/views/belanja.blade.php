@@ -3,67 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiTani - Belanja</title>
+    <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .navbar.bg-body-tertiary {
-            background-color: #58A399 !important;
-        }
-        .navbar-nav .nav-link {
-            color: white;
-        }
-
-        .search-container {
-            position: relative;
-            width: 100%;
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px; /* Sesuaikan ukuran sesuai keinginan Anda */
-            height: 20px; /* Sesuaikan ukuran sesuai keinginan Anda */
-        }
-
-        .form-control {
-            padding-left: 40px; /* Sesuaikan dengan lebar gambar + margin */
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-
-        .btn {
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-            margin-left: 10px;
-            
-        }
-        .btn-heart img {
-            width: 24px;
-            height: 24px;
-        }
-        .btn-heart {
-            background: none;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            
-        }
-
-        .container .row {
-            margin-top: 20px;
-        }
+        
 
         .card {
-            border-top-left-radius: 25px;
-            border-bottom-left-radius: 25px;
-            border-top-right-radius: 25px;
-            border-bottom-right-radius: 25px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-img-top {
+            width: 90%;
+            height: 180px;
+            object-fit: cover;
+            margin-top: 10px; /* Ubah nilai sesuai dengan jarak yang diinginkan */
+        }
+
+        .btn-love {
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px; /* Membuat tombol love berbentuk bulat */
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+
+        .btn-love {
+            border: none;
+            background: none;
+        }
+
+        .btn-love img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-love:hover img {
+            filter: brightness(0.8); /* Contoh efek hover pada gambar */
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group .form-control {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .input-group .btn-love {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
         }
     </style>
 </head>
@@ -95,18 +91,18 @@
         </nav>
     </header>
     <main>
-        <form class="d-flex w-50 mx-auto mb-0 mt-4 search-form" role="search">
-            <div class="search-container">
-                <img src="search.png" alt="Search Icon" class="search-icon">
+        <form class="d-flex w-50 mx-auto mb-5 search-form" role="search">
+            <div class="input-group rounded-pill">
                 <input class="form-control me-2" type="search" placeholder="Cari Belanja..." aria-label="Search">
+                <img src="search.png" alt="Search Icon">
+                <button type="button" class="btn btn-light btn-love">
+                  <img src="heart.png" id="love-image" alt="Love Icon">
+                </button>
+                <!-- <button class="btn btn-outline-light" type="submit">Cari</button> -->
             </div>
-            <button class="btn btn-outline-success me-2" type="submit">Search</button>
-            <button class="btn-heart" type="button">
-                <img src="heart.png" alt="Heart Icon">
-            </button>
         </form>
-    
-    <div class="container text-center">
+
+        <div class="container text-center">
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
                 <div class="col">
                     <div class="card h-100">
