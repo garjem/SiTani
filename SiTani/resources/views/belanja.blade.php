@@ -104,6 +104,10 @@
             overflow-y: auto;
             padding: 10px;
         }
+        .chat-footer {
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
     </style>
 </head>
 <body>
