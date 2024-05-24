@@ -13,23 +13,28 @@
             --label-top-position: 10px; /* Customizable label top position */
             --input-border-radius: 10px; /* Customizable border radius */
         }
+
         .navbar.bg-body-tertiary {
             background-color: #58A399 !important;
         }
+
         .navbar-brand img {
             height: 30px; /* Set a default height */
             width: auto; /* Maintain aspect ratio */
         }
+
         body {
             background-color: #FFFFFF;
             margin: 0;
         }
+
         .full-height-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: calc(100vh - 56px); /* Height of the navbar */
         }
+
         .container {
             max-width: 1200px;
             background-color: white;
@@ -39,6 +44,7 @@
             display: flex;
             flex-direction: row;
         }
+
         .image-section {
             flex: 1;
             background-image: url('/assets/sayuran.png'); /* Ganti 'your-image.jpg' dengan nama file gambar Anda */
@@ -47,6 +53,7 @@
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
         }
+
         .form-section {
             flex: 1;
             padding: 50px;
