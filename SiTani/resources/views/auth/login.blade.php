@@ -13,9 +13,10 @@
             --label-top-position: 10px; /* Customizable label top position */
             --input-border-radius: 10px; /* Customizable border radius */
         }
-
+        .navbar.bg-body-tertiary {
+            background-color: #58A399 !important;
+        }
         
-
         .form-section {
             flex: 1;
             padding: 50px;
