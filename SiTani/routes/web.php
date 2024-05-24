@@ -45,3 +45,7 @@ Route::get('/dashboardproduk', function () {
 Route::get('/dashboardworkshop', function () {
     return view('admin.dashboardworkshop'); 
 });
+
+Route::get('/wishlist', function () {
+    return view('wishlist'); 
+});
