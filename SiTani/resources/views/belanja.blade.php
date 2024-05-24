@@ -182,6 +182,11 @@
                 </div>
             </div>
         </div>
+        <!-- Tombol Chat -->
+        <button id="chatButton" class="chat-button">
+            <img src="chat_icon.png" alt="Chat Icon" width="30" height="30">
+        </button>
+
     </main>
 </body>
 </html>
