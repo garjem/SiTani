@@ -3,105 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiTani - Regisssster</title>
+    <title>SiTani - Register</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root {
-            --input-bg-color: #E0E0E0; /* Customizable background color */
-            --input-height: 70px; /* Customizable input height */
-            --input-font-size: 16px; /* Customizable font size */
-            --label-top-position: 10px; /* Customizable label top position */
-            --input-border-radius: 10px; /* Customizable border radius */
-        }
-
-        .navbar.bg-body-tertiary {
-            background-color: #58A399 !important;
-        }
-        .navbar-brand img {
-            height: 30px; /* Set a default height */
-            width: auto; /* Maintain aspect ratio */
-        }
-
         body {
             background-color: #F2F2F2;
         }
         .container {
             max-width: 400px;
-            margin-top: 20px;
-            border-radius: 10px;
+            margin-top: 50px;
         }
         .card {
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            border-radius: 20px; /* Make the card corners more rounded */
         }
-        .card-body {
-            padding-top: 3;
+        .card-header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            font-size: 24px;
         }
         .btn-block {
-            background-color: #58A399;
+            background-color: #4CAF50;
             border: none;
-            color: #fff;
         }
         .btn-block:hover {
-            background-color: #3aafa9;
-        }
-        .form-group {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-        .form-control {
-            padding-top: calc(var(--label-top-position) + 20px);
-            height: var(--input-height); /* Use the CSS variable for height */
-            font-size: var(--input-font-size); /* Use the CSS variable for font size */
-            background-color: var(--input-bg-color); /* Use the CSS variable for background color */
-            border: 1px solid #ccc; /* Optional: Add a border for better visibility */
-            border-radius: var(--input-border-radius); /* Use the CSS variable for border radius */
-        }
-        .form-group label {
-            position: absolute;
-            top: var(--label-top-position); /* Use the CSS variable for top position */
-            left: 15px;
-            color: #999;
-            font-size: 14px;
-            transition: all 0.2s ease-in-out;
-            pointer-events: none;
-        }
-        .invalid-feedback {
-            display: block;
-        }
-        .form-header,
-        .form-footer {
-            text-align: center;
-        }
-        .form-header h1,
-        .form-header p {
-            margin: 0;
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid justify-content-center">
-                <a class="navbar-brand" href="#">
-                    <img src="assets/SiTani.png" alt="SiTani" class="navbar-logo"> <!-- Ganti '/path/to/your/image.png' dengan path gambar Anda -->
-                </a>
-            </div>
-        </nav>
-    </header>
     <div class="container">
-        <div class="form-header">
-            <h1>Selamat Datang!</h1>
-            <p>Daftarkan alamat email-mu untuk Bergabung</p>
-        </div>
         <div class="card">
+            <div class="card-header">
+                Selamat Datang!
+            </div>
             <div class="card-body">
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="name">Nama</label>
+                        <label for="name">Name</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -110,7 +51,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email Address</label>
                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -119,7 +60,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password">Kata Sandi</label>
+                        <label for="password">Password</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
                         @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -128,7 +69,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="password-confirm">Konfirmasi Kata Sandi</label>
+                        <label for="password-confirm">Confirm Password</label>
                         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                     </div>
                     <div class="form-group">
@@ -140,14 +81,21 @@
                         </span>
                         @enderror
                     </div>
+                    <div class="form-check form-check-info text-start ps-0">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
+                        <label class="form-check-label" for="flexCheckDefault">
+                            I agree to the <a href="#" class="text-dark font-weight-bolder">Terms and Conditions</a>
+                        </label>
+                    </div>
+                    <br>
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-block">Daftar</button>
+                        <button type="submit" class="btn btn-block">Sign Up</button>
                     </div>
                 </form>
+                <div class="text-center mt-3">
+                    <a href="{{ route('login') }}">Sudah bergabung? Masuk!</a>
+                </div>
             </div>
-        </div>
-        <div class="form-footer mt-3">
-            <p>Sudah bergabung? <a href="{{ route('login') }}">Masuk!</a></p>
         </div>
     </div>
 </body>
