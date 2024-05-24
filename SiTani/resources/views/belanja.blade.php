@@ -16,6 +16,14 @@
             position: relative;
             width: 100%;
         }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px; /* Sesuaikan ukuran sesuai keinginan Anda */
+            height: 20px; /* Sesuaikan ukuran sesuai keinginan Anda */
+        }
         .card {
             display: flex;
             flex-direction: column;
