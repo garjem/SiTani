@@ -36,7 +36,9 @@
                 </ul>
             </div>
             <div class="chat-section">
-                <div class="chat-header" id="chatHeader">Chat</div>
+                <div class="contact-name-line">
+                    <span id="contactName"></span>
+                </div>
                 <div id="chatBody" class="chat-body">
                     <div id="chatContent">Pilih toko untuk memulai chat</div>
                 </div>
@@ -55,7 +57,7 @@
         var chatPopup = document.getElementById('chatPopup');
         var closeChat = document.getElementById('closeChat');
         var contactItems = document.querySelectorAll('.contact-item');
-        var chatHeader = document.getElementById('chatHeader');
+        var contactName = document.getElementById('contactName');
         var chatBody = document.getElementById('chatBody');
         var chatFooter = document.getElementById('chatFooter');
         var chatContent = document.getElementById('chatContent');
@@ -113,7 +115,7 @@
             selectedItem.classList.add('active');
 
             // Display chat content and footer
-            chatHeader.textContent = chatId;
+            contactName.textContent = chatId;
             chatFooter.style.display = 'flex';
 
             // Load chat history
@@ -122,7 +124,7 @@
                     `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><div class="bubble">${msg.message}</div></div>`
                 ).join('');
             } else {
-                chatContent.innerHTML = 'Mulai percakapan baru';
+                chatContent.innerHTML = '';
             }
         }
 
@@ -132,10 +134,12 @@
             }
             chatHistories[chatId].push({ sender: sender, message: message });
 
-            // Refresh chat content
-            chatContent.innerHTML = chatHistories[chatId].map(msg => 
-                `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><div class="bubble">${msg.message}</div></div>`
-            ).join('');
+            // Update chat content
+            if (document.querySelector('.contact-item.active').getAttribute('data-chat') === chatId) {
+                chatContent.innerHTML = chatHistories[chatId].map(msg => 
+                    `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><div class="bubble">${msg.message}</div></div>`
+                ).join('');
+            }
         }
     });
 </script>
@@ -299,5 +303,25 @@
         width: 60px;
     }
 
+    /* New styling for the contact name line */
+    .contact-name-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0;
+        position: relative;
+    }
+
+    .contact-name-line::before,
+    .contact-name-line::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .contact-name-line span {
+        margin: 0 10px;
+        white-space: nowrap;
+    }
 
 </style>
