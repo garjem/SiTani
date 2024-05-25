@@ -51,94 +51,95 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var chatButton = document.getElementById('chatButton');
-        var chatPopup = document.getElementById('chatPopup');
-        var closeChat = document.getElementById('closeChat');
-        var contactItems = document.querySelectorAll('.contact-item');
-        var chatHeader = document.getElementById('chatHeader');
-        var chatBody = document.getElementById('chatBody');
-        var chatFooter = document.getElementById('chatFooter');
-        var chatContent = document.getElementById('chatContent');
-        var chatInput = document.getElementById('chatInput');
-        var sendButton = document.getElementById('sendButton');
+document.addEventListener('DOMContentLoaded', function() {
+    var chatButton = document.getElementById('chatButton');
+    var chatPopup = document.getElementById('chatPopup');
+    var closeChat = document.getElementById('closeChat');
+    var contactItems = document.querySelectorAll('.contact-item');
+    var chatHeader = document.getElementById('chatHeader');
+    var chatBody = document.getElementById('chatBody');
+    var chatFooter = document.getElementById('chatFooter');
+    var chatContent = document.getElementById('chatContent');
+    var chatInput = document.getElementById('chatInput');
+    var sendButton = document.getElementById('sendButton');
 
-        var chatHistories = {};
+    var chatHistories = {};
 
-        // Initialize chat histories with a default message from each contact
-        contactItems.forEach(function(item) {
-            var chatId = item.getAttribute('data-chat');
-            chatHistories[chatId] = [{ sender: chatId, message: 'Halo, ada yang bisa kami bantu?' }];
-        });
+    // Initialize chat histories with a default message from each contact
+    contactItems.forEach(function(item) {
+        var chatId = item.getAttribute('data-chat');
+        chatHistories[chatId] = [{ sender: chatId, message: 'Halo, ada yang bisa kami bantu?' }];
+    });
 
-        chatButton.addEventListener('click', function() {
-            chatPopup.style.display = 'block';
-        });
+    chatButton.addEventListener('click', function() {
+        chatPopup.style.display = 'block';
+    });
 
-        closeChat.addEventListener('click', function() {
+    closeChat.addEventListener('click', function() {
+        chatPopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == chatPopup) {
             chatPopup.style.display = 'none';
-        });
+        }
+    });
 
-        window.addEventListener('click', function(event) {
-            if (event.target == chatPopup) {
-                chatPopup.style.display = 'none';
+    contactItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            var chatId = this.getAttribute('data-chat');
+            openChat(chatId, this);
+        });
+    });
+
+    sendButton.addEventListener('click', function() {
+        var message = chatInput.value.trim();
+        if (message) {
+            var activeChat = document.querySelector('.contact-item.active');
+            if (activeChat) {
+                var chatId = activeChat.getAttribute('data-chat');
+                addMessageToChat(chatId, 'You', message);
+                chatInput.value = '';
             }
-        });
+        }
+    });
 
+    function openChat(chatId, selectedItem) {
+        // Remove active class from all items
         contactItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                var chatId = this.getAttribute('data-chat');
-                openChat(chatId, this);
-            });
+            item.classList.remove('active');
         });
 
-        sendButton.addEventListener('click', function() {
-            var message = chatInput.value.trim();
-            if (message) {
-                var activeChat = document.querySelector('.contact-item.active');
-                if (activeChat) {
-                    var chatId = activeChat.getAttribute('data-chat');
-                    addMessageToChat(chatId, 'You', message);
-                    chatInput.value = '';
-                }
-            }
-        });
+        // Add active class to selected item
+        selectedItem.classList.add('active');
 
-        function openChat(chatId, selectedItem) {
-            // Remove active class from all items
-            contactItems.forEach(function(item) {
-                item.classList.remove('active');
-            });
+        // Display chat content and footer
+        chatHeader.textContent = chatId;
+        chatFooter.style.display = 'flex';
 
-            // Add active class to selected item
-            selectedItem.classList.add('active');
-
-            // Display chat content and footer
-            chatHeader.textContent = chatId;
-            chatFooter.style.display = 'flex';
-
-            // Load chat history
-            if (chatHistories[chatId]) {
-                chatContent.innerHTML = chatHistories[chatId].map(msg => 
-                    `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><b>${msg.sender}:</b> ${msg.message}</div>`
-                ).join('');
-            } else {
-                chatContent.innerHTML = 'Mulai percakapan baru';
-            }
-        }
-
-        function addMessageToChat(chatId, sender, message) {
-            if (!chatHistories[chatId]) {
-                chatHistories[chatId] = [];
-            }
-            chatHistories[chatId].push({ sender: sender, message: message });
-
-            // Refresh chat content
+        // Load chat history
+        if (chatHistories[chatId]) {
             chatContent.innerHTML = chatHistories[chatId].map(msg => 
-                `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><b>${msg.sender}:</b> ${msg.message}</div>`
+                `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><div class="bubble">${msg.message}</div></div>`
             ).join('');
+        } else {
+            chatContent.innerHTML = 'Mulai percakapan baru';
         }
+    }
+
+    function addMessageToChat(chatId, sender, message) {
+        if (!chatHistories[chatId]) {
+            chatHistories[chatId] = [];
+        }
+        chatHistories[chatId].push({ sender: sender, message: message });
+
+        // Refresh chat content
+        chatContent.innerHTML = chatHistories[chatId].map(msg => 
+            `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><div class="bubble">${msg.message}</div></div>`
+        ).join('');
+    }
 });
+
 
 </script>
 
@@ -241,13 +242,53 @@
     }
 
     .message-left {
-        text-align: left;
+        display: flex;
+        justify-content: flex-start;
         margin: 5px;
     }
 
+    .message-left .bubble {
+        background-color: #e0e0e0;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+        max-width: 70%;
+    }
+
+    .message-left .bubble::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent #e0e0e0 transparent transparent;
+    }
+
     .message-right {
-        text-align: right;
+        display: flex;
+        justify-content: flex-end;
         margin: 5px;
+    }
+
+    .message-right .bubble {
+        background-color: #58A399;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+        max-width: 70%;
+    }
+
+    .message-right .bubble::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent transparent #58A399;
     }
 
     #chatInput {
@@ -258,5 +299,6 @@
     #sendButton {
         width: 60px;
     }
+
 
 </style>
