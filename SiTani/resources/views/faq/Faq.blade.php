@@ -31,7 +31,7 @@
                             </h2>
                             <div id="collapse{{$data->id}}" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>{{ $data->content }}</strong>
+                                {{ $data->content }}
                             </div>
                             </div>
                         </div>
