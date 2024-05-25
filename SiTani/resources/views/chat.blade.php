@@ -40,11 +40,12 @@
             </div>
         </div>
         <div class="chat-footer" id="chatFooter" style="display: none;">
-            <input type="text" placeholder="Ketik pesan...">
-            <button type="submit">Kirim</button>
+            <input type="text" id="chatInput" placeholder="Ketik pesan..." style="width: 85%;">
+            <button type="submit" id="sendButton">Kirim</button>
         </div>
     </div>
 </div>
+
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
