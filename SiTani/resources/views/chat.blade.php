@@ -35,13 +35,15 @@
                     </li>
                 </ul>
             </div>
-            <div id="chatBody" class="chat-body">
-                <div id="chatContent">Pilih toko untuk memulai chat</div>
+            <div id="chatSection" class="chat-section">
+                <div id="chatBody" class="chat-body">
+                    <div id="chatContent">Pilih toko untuk memulai chat</div>
+                </div>
+                <div class="chat-footer" id="chatFooter" style="display: none;">
+                    <input type="text" id="chatInput" placeholder="Ketik pesan...">
+                    <button type="submit" id="sendButton">Kirim</button>
+                </div>
             </div>
-        </div>
-        <div class="chat-footer" id="chatFooter" style="display: none;">
-            <input type="text" id="chatInput" placeholder="Ketik pesan...">
-            <button type="submit" id="sendButton">Kirim</button>
         </div>
     </div>
 </div>
@@ -113,7 +115,7 @@
 
             // Display chat content and footer
             chatHeader.textContent = chatId;
-            chatFooter.style.display = 'block';
+            chatFooter.style.display = 'flex';
 
             // Load chat history
             if (chatHistories[chatId]) {
@@ -136,7 +138,8 @@
                 `<div class="${msg.sender === 'You' ? 'message-right' : 'message-left'}"><b>${msg.sender}:</b> ${msg.message}</div>`
             ).join('');
         }
-    });
+});
+
 </script>
 
 <style>
@@ -182,7 +185,7 @@
 
     .chat-content {
         display: flex;
-        height: calc(100% - 90px);
+        height: calc(100% - 50px);
     }
 
     .contact-list {
@@ -194,8 +197,15 @@
         margin: 0;
     }
 
-    .chat-body {
+    .chat-section {
         width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .chat-body {
+        flex: 1;
         padding: 10px;
         overflow-y: auto;
     }
@@ -241,7 +251,7 @@
     }
 
     #chatInput {
-        width: calc(100% - 80px);
+        flex: 1;
         margin-right: 10px;
     }
 
