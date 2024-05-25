@@ -49,52 +49,84 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var chatButton = document.getElementById('chatButton');
-        var chatPopup = document.getElementById('chatPopup');
-        var closeChat = document.getElementById('closeChat');
-        var contactItems = document.querySelectorAll('.contact-item');
-        var chatHeader = document.getElementById('chatHeader');
-        var chatBody = document.getElementById('chatBody');
-        var chatFooter = document.getElementById('chatFooter');
-        var contactList = document.getElementById('contactList');
-        var chatContent = document.getElementById('chatContent');
+    var chatButton = document.getElementById('chatButton');
+    var chatPopup = document.getElementById('chatPopup');
+    var closeChat = document.getElementById('closeChat');
+    var contactItems = document.querySelectorAll('.contact-item');
+    var chatHeader = document.getElementById('chatHeader');
+    var chatBody = document.getElementById('chatBody');
+    var chatFooter = document.getElementById('chatFooter');
+    var chatContent = document.getElementById('chatContent');
+    var chatInput = document.getElementById('chatInput');
+    var sendButton = document.getElementById('sendButton');
 
-        chatButton.addEventListener('click', function() {
-            chatPopup.style.display = 'block';
-        });
+    var chatHistories = {};
 
-        closeChat.addEventListener('click', function() {
+    chatButton.addEventListener('click', function() {
+        chatPopup.style.display = 'block';
+    });
+
+    closeChat.addEventListener('click', function() {
+        chatPopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == chatPopup) {
             chatPopup.style.display = 'none';
-        });
-
-        window.addEventListener('click', function(event) {
-            if (event.target == chatPopup) {
-                chatPopup.style.display = 'none';
-            }
-        });
-
-        contactItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                var chatId = this.getAttribute('data-chat');
-                openChat(chatId, this);
-            });
-        });
-
-        function openChat(chatId, selectedItem) {
-            // Remove active class from all items
-            contactItems.forEach(function(item) {
-                item.classList.remove('active');
-            });
-
-            // Add active class to selected item
-            selectedItem.classList.add('active');
-
-            // Display chat content and footer
-            chatContent.innerHTML = 'Chat dengan ' + chatId;
-            chatFooter.style.display = 'block';
-            chatHeader.textContent = chatId;
         }
     });
+
+    contactItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            var chatId = this.getAttribute('data-chat');
+            openChat(chatId, this);
+        });
+    });
+
+    sendButton.addEventListener('click', function() {
+        var message = chatInput.value.trim();
+        if (message) {
+            var activeChat = document.querySelector('.contact-item.active');
+            if (activeChat) {
+                var chatId = activeChat.getAttribute('data-chat');
+                addMessageToChat(chatId, 'You', message);
+                chatInput.value = '';
+            }
+        }
+    });
+
+    function openChat(chatId, selectedItem) {
+        // Remove active class from all items
+        contactItems.forEach(function(item) {
+            item.classList.remove('active');
+        });
+
+        // Add active class to selected item
+        selectedItem.classList.add('active');
+
+        // Display chat content and footer
+        chatHeader.textContent = chatId;
+        chatFooter.style.display = 'block';
+
+        // Load chat history
+        if (chatHistories[chatId]) {
+            chatContent.innerHTML = chatHistories[chatId].map(msg => `<div><b>${msg.sender}:</b> ${msg.message}</div>`).join('');
+        } else {
+            chatContent.innerHTML = 'Mulai percakapan baru';
+        }
+    }
+
+    function addMessageToChat(chatId, sender, message) {
+        if (!chatHistories[chatId]) {
+            chatHistories[chatId] = [];
+        }
+        chatHistories[chatId].push({ sender: sender, message: message });
+
+        // Refresh chat content
+        chatContent.innerHTML = chatHistories[chatId].map(msg => `<div><b>${msg.sender}:</b> ${msg.message}</div>`).join('');
+    }
+});
+
 </script>
 
 <style>
@@ -161,6 +193,9 @@
     .chat-footer {
         padding: 10px;
         border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .contact-item {
@@ -184,4 +219,5 @@
     .contact-item.active {
         background-color: #e0e0e0;
     }
+
 </style>
