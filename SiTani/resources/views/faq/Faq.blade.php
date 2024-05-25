@@ -21,7 +21,7 @@
         <div class="mt-lg-5">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="accordion mt-3" id="accordionExample">
+                    <div class="accordion mt-3" id="accordionExample" >
                         @foreach ($datas as $data)
                         <div class="accordion-item">
                             <h2 class="accordion-header">
