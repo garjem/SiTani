@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\faqController;
 use App\Http\Controllers\BelanjaController;
 
+use App\Http\Controllers\artikelController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,16 @@ use App\Http\Controllers\BelanjaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('/', function () {
+    return view('landingPage.landingPage');
+});
+
+Route::get('/belanja',[BelanjaController::class,'index']);
+Route::get('/Artikel',[artikelController::class,'index']);
 
 Route::get('/', function () {
     return view('auth.login');
