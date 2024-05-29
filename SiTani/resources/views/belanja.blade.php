@@ -1,3 +1,6 @@
+@extends('layout.main')
+@section('Title','dashboard')
+@section('Content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +9,6 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .navbar.bg-body-tertiary {
-            background-color: #58A399 !important;
-        }
-
-        .navbar-nav .nav-link {
-            color: white;
-        }
-
         .search-form {
             position: relative;
             margin-top: 10px; /* Jarak ke bawah */
@@ -72,32 +67,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 text-white">SiTani</span>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Workshop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Belanja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Artikel</a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="navbar-brand" href="#">
-                    <img src="keranjang.png" width="40" height="40">
-                </a>
-                <a class="navbar-brand" href="#">
-                    <img src="profile.png" width="40" height="40">
-                </a>
-            </div>
-        </nav>
-    </header>
     <main>
         <form class="d-flex w-50 mx-auto mb-5 search-form" role="search">
             <div class="input-group rounded-pill">
@@ -192,3 +161,5 @@
     </main>
 </body>
 </html>
+
+@endsection
