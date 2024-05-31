@@ -41,6 +41,13 @@ Route::get('/deleteFaq/{id}', [faqController::class, 'delete'])->name('deleteFaq
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/cart/add', [\App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
+Route::get('/cart' , [\App\Http\Controllers\CartController::class , 'index'])->name('cart');
+Route::put('/cart/{id}', [\App\Http\Controllers\CartController::class , 'updateQuantity'])->name('cart.update');
+Route::delete('/cart/{id}', [\App\Http\Controllers\CartController::class , 'destroy'])->name('cart.destroy');
+Route::post('order' , [\App\Http\Controllers\CartController::class , 'order'])->name('order');
+Route::get('/order/list' , [\App\Http\Controllers\CartController::class , 'orderList'])->name('order.list');
+Route::put('/order/list/{id}' , [\App\Http\Controllers\CartController::class , 'addReview'])->name('order.addReview');
 
 Route::get('/dashboardadmin', function () {
     return view('admin.dashboard'); 
