@@ -1,6 +1,6 @@
+@extends('layouts.app')
 
-
-
+@section('content')
 <style>
     .card {
         border: none;
@@ -145,58 +145,5 @@
         </div>
     </div>
 </div>
-
-<style>
-    .modal-content {
-        border-radius: 10px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    }
-    .modal-header {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    .btn-close-white {
-        filter: invert(1);
-    }
-    .btn-success, .btn-secondary {
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-weight: 500;
-    }
-    .btn-success {
-        background-color: #198754;
-        border: none;
-    }
-    .btn-success:hover {
-        background-color: #157347;
-    }
-    .btn-secondary {
-        background-color: #6c757d;
-        border: none;
-    }
-    .btn-secondary:hover {
-        background-color: #5a6268;
-    }
-    .form-control {
-        border-radius: 5px;
-        border: 1px solid #ced4da;
-    }
-    .form-control:focus {
-        border-color: #198754;
-        box-shadow: none;
-    }
-    .modal-footer {
-        border-top: none;
-        background-color: #343a40;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-    .bg-light {
-        background-color: #f8f9fa !important;
-    }
-    .bg-dark {
-        background-color: #343a40 !important;
-    }
-</style>
 
 @endsection
