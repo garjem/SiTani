@@ -27,3 +27,16 @@ class CartController extends Controller
         $carts = Cart::where('user_id' , Auth::id())->get();
         return view('cart' , compact('carts'));
     }
+
+    public function updateQuantity(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'quantity' => 'required|numeric|min:1'
+        ]);
+
+        $cart = Cart::find($id);
+        $cart->quantity = $validatedData['quantity'];
+        $cart->save();
+
+        return redirect()->back()->with('success', 'Item quantity updated!');
+    }
