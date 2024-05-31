@@ -78,3 +78,30 @@
                 </tr>
                 <?php $tots += $cart->product->price * $cart->quantity ?>
                 
+                <!-- Modal -->
+                <div class="modal fade" id="editCartItemModal{{ $cart->id }}" tabindex="-1" aria-labelledby="editCartItemModal{{ $cart->id }}Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editCartItemModal{{ $cart->id }}Label">Edit Quantity</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form method="POST" action="{{ route('cart.update', $cart->id) }}">
+                                @csrf
+                                @method('PUT')
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="quantity">Quantity</label>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" value="{{ $cart->quantity }}">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                @endforeach
