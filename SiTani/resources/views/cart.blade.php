@@ -40,3 +40,17 @@
         box-shadow: none;
     }
 </style>
+
+<div class="section p-5">
+    <div class="card m-5 p-5">
+        <h2 class="mb-4">Keranjang</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Subtotal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
