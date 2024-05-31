@@ -48,3 +48,10 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Item removed from cart!');
     }
+
+    public function order(Request $request){
+        $cart = Cart::where('user_id' , Auth::id())->get();
+        $total = 0 ;
+        foreach ($cart as $x){
+          $total +=  $x->product->price * $x->quantity;
+        }
