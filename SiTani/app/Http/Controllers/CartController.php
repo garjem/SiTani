@@ -93,3 +93,18 @@ class CartController extends Controller
         }
         return redirect()->back();
     }
+
+    public function orderList(){
+        $orders  = Order::where('user_id' , Auth::id())->get();
+        return view('orderList' , compact('orders'));
+    }
+
+    public function addReview(Request $request, $id){
+        $reviews = Review::findOrFail($id);
+        $reviews->status = 'yes';
+        $reviews->comment = $request->review;
+        $reviews->save();
+
+        return redirect()->route('order.list')->with('success', 'review telah ditambah!');
+    }
+}
