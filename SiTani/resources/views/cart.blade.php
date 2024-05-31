@@ -1,3 +1,6 @@
+
+
+
 <style>
     .card {
         border: none;
@@ -29,9 +32,7 @@
         background-color: #0d9488;
         border: none;
     }
-    .btn-primary:hover {
-        background-color: #0f766e;
-    }
+
     .modal-header, .modal-footer {
         border: none;
     }
@@ -105,3 +106,16 @@
                 </div>
 
                 @endforeach
+                <tr>
+                    <td colspan="3"></td>
+                    <td><strong>Total:</strong> Rp{{ number_format($tots, 0, ',', '.') }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                            Checkout
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
