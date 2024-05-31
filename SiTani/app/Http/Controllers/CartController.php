@@ -55,3 +55,41 @@ class CartController extends Controller
         foreach ($cart as $x){
           $total +=  $x->product->price * $x->quantity;
         }
+        
+
+        $order = new Order();
+        if ($request->hasFile('bukti_trf')) {
+            // simpan gambar jika ada
+            $image = $request->file('bukti_trf');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('bukti_trf'), $imageName);
+            $order->bukti_trf = $imageName;
+        }
+        $order->user_id = Auth::id();
+        $order->status = 'sudah di bayar';
+        $order->total = $total;
+        $order->save();
+
+        foreach ($cart as $x){
+            $orderItem = new OrderItem();
+            $orderItem->order_id = $order->id;
+            $orderItem->product_id = $x->product_id;
+            $orderItem->quantity = $x->quantity;
+            $orderItem->save();
+            $x->delete();
+        }
+        $orderItem = OrderItem::all();
+        foreach ($cart as $y){
+            foreach ($orderItem as $item){
+                $review = new Review();
+                $review->user_id = $y->user_id;
+                $review->order_item_id = $item->id;
+                $review->product_id = $y->product_id;
+                $review->order_id = $order->id;
+                $review->comment = '';
+                $review->status = 'not';
+                $review->save();
+            }
+        }
+        return redirect()->back();
+    }
