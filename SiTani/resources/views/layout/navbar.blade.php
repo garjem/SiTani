@@ -36,9 +36,56 @@
                 <a class="navbar-brand" href="#">
                     <img src="keranjang.png" width="40" height="40">
                 </a>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                     <img src="profile.png" width="40" height="40">
                 </a>
             </div>
     </nav>
+
+<!-- modal 1 -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel1">Profil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-light" type="button">Ubah Profil</button>
+          <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Pengaturan</button>
+          <button class="btn btn-light" type="button">FAQ</button>
+          <button class="btn btn-light" type="button">Pengajuan Mitra</button>
+          <button class="btn btn-danger" type="button">Keluar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal 2 -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">Pengaturan</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column align-items-center">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <button class="btn btn-light" type="button">Cookies and Policy</button>
+          <button class="btn btn-light" type="button">Privasi dan Keamanan</button>
+          <button class="btn btn-light" type="button">Tema dan Tampilan</button>
+          <button class="btn btn-light" type="button">Bahasa</button>
+          <button class="btn btn-danger" type="button">Hapus Akun</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
