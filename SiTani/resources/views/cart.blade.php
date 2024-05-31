@@ -119,3 +119,29 @@
         </table>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-white text-dark">
+                <h5 class="modal-title" id="checkoutModalLabel">Upload Bukti Transfer</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="{{ route('order') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body bg-light">
+                    <div class="mb-3">
+                        <label for="buktiTrf" class="form-label">Upload File</label>
+                        <input class="form-control" name="bukti_trf" type="file" id="buktiTrf" aria-describedby="fileHelp">
+                        <div id="fileHelp" class="form-text">Upload bukti transfer dalam format JPG, JPEG, atau PNG dengan ukuran maksimal 5MB.</div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center bg-light">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-success">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
