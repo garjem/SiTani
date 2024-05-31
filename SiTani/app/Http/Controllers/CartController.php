@@ -40,3 +40,11 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Item quantity updated!');
     }
+    
+    public function destroy($id)
+    {
+        $cart = Cart::findOrFail($id);
+        $cart->delete();
+
+        return redirect()->back()->with('success', 'Item removed from cart!');
+    }
