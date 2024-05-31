@@ -54,3 +54,27 @@
                     <th>Aksi</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php $tots = 0 ?>
+                @foreach ($carts as $cart)
+                <tr>
+                    <td>{{ $cart->id }}</td>
+                    <td>{{ $cart->product->name }}</td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editCartItemModal{{ $cart->id }}">-</button>
+                            {{ $cart->quantity }}
+                            <button class="btn btn-outline-secondary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#editCartItemModal{{ $cart->id }}">+</button>
+                        </div>
+                    </td>
+                    <td>{{ number_format($cart->product->price * $cart->quantity, 0, ',', '.') }}</td>
+                    <td>
+                        <form action="{{ route('cart.destroy', $cart->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php $tots += $cart->product->price * $cart->quantity ?>
+                
