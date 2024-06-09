@@ -64,35 +64,13 @@
             border-top-right-radius: 25px;
             border-bottom-right-radius: 25px; 
         }
+        body {
+            padding-top: 55px; /* Adjust the padding based on the height of your navbar */
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 text-white">SiTani</span>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Workshop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Belanja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Artikel</a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="navbar-brand" href="#">
-                    <img src="keranjang.png" width="30" height="30">
-                </a>
-                <a class="navbar-brand" href="#">
-                    <img src="profile.png" width="30" height="30">
-                </a>
-            </div>
-        </nav>
-
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand mb-0 h1 text-white" href="#">SiTani</a>
