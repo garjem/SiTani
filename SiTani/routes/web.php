@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/belanja',[BelanjaController::class,'index']);
+Route::get('/belanja',[BelanjaController::class, 'index']);
 
 Auth::routes();
 

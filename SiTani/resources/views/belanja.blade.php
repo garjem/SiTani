@@ -108,78 +108,17 @@
     
         <div class="container text-center">
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+                @foreach ($products as $product)
                 <div class="col">
                     <div class="card h-100">
-                        <img src="/assets/wortel.png" class="card-img-top" alt="Wortel">
+                        <img src="{{ asset($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
                         <div class="card-body text-start">
-                            <h5 class="card-title">Wortel</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Wortel adalah sayuran umbi yang terkenal dengan warna oranye cerahnya. Mereka kaya akan beta-karoten, serat, dan vitamin, terutama vitamin A.</p>
+                            <h5 class="card-title">{{ $product->name }}</h5>
+                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">{{ $product->description }}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/buncis.png" class="card-img-top" alt="Buncis">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Buncis</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Buncis, adalah sejenis polong-polongan yang dapat dimakan dari berbagai kultivar Phaseolus vulgaris. Buah, biji, dan daunnya dimanfaatkan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/petai.png" class="card-img-top" alt="Petai">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Petai</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Petai, pete, atau mlanding merupakan pohon tahunan tropika dari suku polong-polongan, anak-suku petai-petaian. Tumbuhan ini tersebar luas di Nusantara bagian barat.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/jengkol.png" class="card-img-top" alt="Jengkol">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Jengkol</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Jengkol termasuk suku polong-polongan. Buahnya berupa polong dan bentuknya gepeng berbelit membentuk spiral, berwarna lembayung tua.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/wortel.png" class="card-img-top" alt="Wortel">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Wortel</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Wortel adalah sayuran umbi yang terkenal dengan warna oranye cerahnya. Mereka kaya akan beta-karoten, serat, dan vitamin, terutama vitamin A.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/buncis.png" class="card-img-top" alt="Buncis">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Buncis</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Buncis, adalah sejenis polong-polongan yang dapat dimakan dari berbagai kultivar Phaseolus vulgaris. Buah, biji, dan daunnya dimanfaatkan.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/petai.png" class="card-img-top" alt="Petai">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Petai</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Petai, pete, atau mlanding merupakan pohon tahunan tropika dari suku polong-polongan, anak-suku petai-petaian. Tumbuhan ini tersebar luas di Nusantara bagian barat.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/jengkol.png" class="card-img-top" alt="Jengkol">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">Jengkol</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Jengkol termasuk suku polong-polongan. Buahnya berupa polong dan bentuknya gepeng berbelit membentuk spiral, berwarna lembayung tua.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- Include Chat Feature -->
