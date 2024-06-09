@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-    @include('navbar')
+    @include('/layout/navbar')
     <main>
         <form class="d-flex w-50 mx-auto mb-0 mt-4 search-form" role="search">
             <div class="search-container">
