@@ -54,7 +54,7 @@
             <li><a class="dropdown-item" href="#">FAQ</a></li>
             <li><a class="dropdown-item" href="#">Pengajuan Mitra</a></li>
             <li><a class="dropdown-item text-danger" href="#">Keluar</a></li>
-          </ul>
+        </ul>
       </li>
     </ul>
   </div>
