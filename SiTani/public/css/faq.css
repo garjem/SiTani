@@ -70,11 +70,11 @@ img
     margin-top: 15px;
 }
 button.accordion-button{
-    background-color: #4E6C50;
+    background-color: #51725E;
     color: white !important;
 }
 .accordion-button:not(.collapsed){
-    background-color: #4E6C50;
+    background-color: #51725E;
     color: white;
 }
 

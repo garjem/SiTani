@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\faqController;
-use App\Http\Controllers\BelanjaController;
+use App\Http\Controllers\reviewController;
 
 use App\Http\Controllers\artikelController;
+use App\Http\Controllers\BelanjaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,9 @@ Route::get('/Faq', [faqController::class, 'index'])->name('Faq');
 Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
 Route::post('/inputFaq', [faqController::class, 'create'])->name('inputFaq');
 Route::get('/deleteFaq/{id}', [faqController::class, 'delete'])->name('deleteFaq');
+Route::get('/review', [reviewController::class, 'viewReview'])->name('review');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
