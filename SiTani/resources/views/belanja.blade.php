@@ -9,6 +9,7 @@
         .navbar.bg-body-tertiary {
             background-color: #58A399 !important;
         }
+
         .navbar-nav .nav-link {
             color: white;
         }
@@ -64,6 +65,7 @@
             border-top-right-radius: 25px;
             border-bottom-right-radius: 25px; 
         }
+        
         body {
             padding-top: 55px; /* Adjust the padding based on the height of your navbar */
         }
