@@ -19,8 +19,26 @@ class faqController extends Controller
         return view ('faqAdmin.Faq', ["datas"=>$faq]);
     }
 
-    Public function create ()
+    Public function create (Request $request)
     {
+        Faq::create ([
+            'header' => $request->header,
+            'content'=> $request->content,
+
+        ]);
+        return back();
+    }
+
+    public function input() {
+        return view ('faqAdmin/input');
 
     }
+    
+    public function delete($id){
+        $delete=Faq::where('id', $id);
+        $delete->delete();
+        return back();
+
+    }
+
 }

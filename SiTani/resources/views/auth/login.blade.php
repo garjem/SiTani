@@ -1,104 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In | SiTani</title>
-    <!-- Bootstrap CSS -->
+    <title>SiTani - Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            background-color: #f8f9fa;
-        }
-
-        .container {
+            background-color: #f0f4f7;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
-
-        .card {
-            max-width: 400px;
-            width: 100%;
-            border: none;
+        .container {
+            max-width: 900px;
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .card-header h4 {
-            margin-bottom: 20px;
-            font-weight: 700;
+        .image-section {
+            background-image: url('https://example.com/your-image.jpg'); /* Ganti URL dengan URL gambar Anda */
+            background-size: cover;
+            background-position: center;
         }
-
-        .form-group {
-            margin-bottom: 20px;
+        .form-section {
+            padding: 50px;
         }
-
-        .form-group label {
-            font-size: 14px;
-            color: #333;
+        .btn-block {
+            background-color: #5bc0be;
+            color: white;
         }
-
-        .form-group input {
-            padding: 10px;
-            border-radius: 5px;
+        .btn-block:hover {
+            background-color: #3aafa9;
         }
-
-        .btn {
-            background-color: #58A399;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
         .text-center {
-            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header text-center">
-                <h4>Sign In</h4>
-                <p>Enter your email and password to sign in</p>
-            </div>
-            <div class="card-body">
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" class="form-control" name="password" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember me</label>
-                    </div>
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-block">Sign In</button>
-                    </div>
-                </form>
-            </div>
-            <div class="card-footer text-center">
-                <p>Don't have an account? <a href="{{ route('register') }}" class="text-primary">Sign up</a></p>
-            </div>
+    <div class="container row no-gutters">
+        <div class="col-md-6 image-section"></div>
+        <div class="col-md-6 form-section">
+            <h2 class="mb-4">Selamat Datang Kembali!</h2>
+            <p>Masukkan alamat email dan password!</p>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" class="form-control" name="password" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-block">Masuk</button>
+                </div>
+            </form>
+            <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar!</a></p>
         </div>
     </div>
 </body>
-
 </html>
-
-<!-- VERSI2 DI WA -->
