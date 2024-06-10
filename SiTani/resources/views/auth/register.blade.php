@@ -23,16 +23,18 @@
         }
 
         body {
-            background-color: #F2F2F2;
+            background-color: #FFFFFF;
         }
         .container {
             max-width: 400px;
-            margin-top: 50px;
+            margin-top: 20px;
+            border-radius: 10px;
         }
         .card {
             border: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            border-radius: 20px; /* Make the card corners more rounded */
         }
         .card-body {
             padding-top: 3;
@@ -76,6 +78,10 @@
         .form-header h1,
         .form-header p {
             margin: 0;
+        }
+        .form-footer a.login-link {
+            color: black; /* Change the link color to black */
+            font-weight: bold; /* Make the link text bold */
         }
     </style>
 </head>
@@ -145,7 +151,7 @@
             </div>
         </div>
         <div class="form-footer mt-3">
-            <p>Sudah bergabung? <a href="{{ route('login') }}">Masuk!</a></p>
+            <p>Sudah bergabung? <a href="{{ route('login') }}" class="login-link">Masuk!</a></p>
         </div>
     </div>
 </body>

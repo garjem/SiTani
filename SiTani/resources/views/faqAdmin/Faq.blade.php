@@ -1,5 +1,5 @@
-@extends('layout.main')
-@section('Title', 'faq')
+@extends('admin.mainadmin')
+@section('Title', 'faq Admin')
 
 @section('css')
 <link rel="stylesheet" href="{{ URL('/css/faq.css') }}">
@@ -23,7 +23,9 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <a class="btn btn-primary mb-3">+ Tambah</a>
+                        <button type="button"  class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Tambah
+                                </button>
                             <div class="text-center">
                                 <table class="table">
                                     <thead>
@@ -40,8 +42,7 @@
                                         <th scope="row">{{ $data->id }}</th>
                                         <td>{{ $data->header }}</td>
                                         <td>{{ $data->content }}</td>
-                                        <td><a href="" class="btn btn-danger btn-sm">Hapus</a></td>
-                                        <td><a href="" class="btn btn-info btn-sm">Update</a></td>
+                                        <td><a href="{{ URL('deleteFaq/'.$data->id) }}" class="btn btn-danger btn-sm">Hapus</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -53,6 +54,39 @@
                 <div class="col-md-6 text-center">
                     <img src="{{ URL('/img/faq.png') }}">
                 </div>
+
+                                </div> <!-- awal Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">FORM FAQ</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form method= 'POST' action="{{ route('inputFaq') }}">
+                                    @csrf 
+                                    <div class="modal-body">
+                                    
+                                        <div class="mb-3">
+                                            <label  class="form-label">Pertanyaan</label>
+                                            <input type="teks" class="form-control" name ="header" id="" placeholder="Masukan Pertanyaan">
+                                            </div>
+
+                                            <div class="mb-3">
+                                            <label class="form-label">Jawaban</label>
+                                            <textarea class="form-control" name=content id="" rows="3" placeholder="Masukan Jawaban"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-primary" name="bsimpan" >Simpan </button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            <!-- AkhirModal -->
             </div>
         </div>
     </div>

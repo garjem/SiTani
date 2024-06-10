@@ -24,7 +24,7 @@
         }
 
         body {
-            background-color: #f0f4f7;
+            background-color: #FFFFFF;
             margin: 0;
         }
 
@@ -36,7 +36,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -95,9 +95,23 @@
         .text-center {
             margin-top: 10px;
         }
+        
+        .form-footer {
+            text-align: center;
+        }
 
         .spacer {
             width: 20px;
+        }
+
+        .form-footer a.login-link {
+            color: black; /* Change the link color to black */
+            font-weight: bold; /* Make the link text bold */
+            text-decoration: none; /* Remove underline */
+        }
+        
+        .form-footer a.login-link:hover {
+            text-decoration: underline; /* Add underline on hover */
         }
     </style>
 </head>
@@ -121,22 +135,24 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">Email</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Kata Sandi</label>
                         <input id="password" type="password" class="form-control" name="password" required>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember me</label>
+                        <label for="remember">Ingat Saya</label>
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-block">Masuk</button>
                     </div>
                 </form>
-                <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar!</a></p>
+                <div class="form-footer mt-3">
+                    <p>Belum punya akun? <a href="{{ route('register') }}" class="login-link">Daftar!</a></p>
+                </div>
             </div>
         </div>
     </div>
