@@ -21,4 +21,21 @@ class Product extends Model
         'category_id',
         'image',
     ];
+
+    
+
+    
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    public function order_list()
+    {
+        return $this->belongsTo(OrderItem::class);
+    }
+    public function review()
+    {
+        return $this->hasOne(Review::class);
+    }
 }
+
