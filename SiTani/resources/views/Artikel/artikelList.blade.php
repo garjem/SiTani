@@ -66,7 +66,7 @@
                     <img src="{{ URL('assets/bertani.jpeg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Manfaat Berkebun</h5>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quos fuga laborum sed neque at inventore? Aut eius possimus voluptatibus.</p>
+                        <p class="card-text">Berkebun bukan hanya sekadar menanam dan merawat tumbuhan saja, ternyata kegiatan berkebun juga memiliki dampak untuk menjaga kesehatan mental dan fisik</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                     <img src="{{ URL('assets/teknologipetani.jpeg') }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Teknologi Pertanian</h5>
-                        <p class="card-text">LTeknologi modern seperti drone dan sensor tanah meningkatkan efisiensi dan hasil panen.</p>
+                        <p class="card-text">Teknologi modern seperti drone dan sensor tanah meningkatkan efisiensi dan hasil panen.</p>
                     </div>
                 </div>
             </div>
