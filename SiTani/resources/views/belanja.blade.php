@@ -69,6 +69,12 @@
         body {
             padding-top: 55px; /* Adjust the padding based on the height of your navbar */
         }
+
+        a.card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 <body>
@@ -89,13 +95,15 @@
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
                 @foreach ($products as $product)
                 <div class="col">
-                    <div class="card h-100">
-                        <img src="{{ asset($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
-                        <div class="card-body text-start">
-                            <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">{{ $product->description }}</p>
+                    <a href="{{ url('/product', $product->id) }}" class="card-link">
+                        <div class="card h-100">
+                            <img src="{{ asset($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                            <div class="card-body text-start">
+                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">{{ $product->description }}</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 @endforeach
             </div>
