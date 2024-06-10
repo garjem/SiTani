@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -20,7 +21,7 @@ class DashboardController extends Controller
         return view('\admin\dashboarmitra',compact('mitras'));
     }
     public function index3(){
-        $users = User::all();
+        $products = Product::all();
         return view('\admin\dashboardproduk',compact('products'));
     }
     public function index4(){
