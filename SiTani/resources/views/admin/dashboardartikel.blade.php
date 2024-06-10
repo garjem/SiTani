@@ -23,20 +23,17 @@
             <tr>
               <th>ID</th>
               <th>Judul</th>
-              <th>Topik</th>
-              <th>Penulis</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Tumbuhan yang Cocok untuk Bertani</td>
-              <td>FunFact</td>
-              <td>Writer</td>
-              <td><button class="btn btn-danger">Hapus</button></td>
-            </tr>
-            <!-- Tambahkan data pelanggan lainnya di sini -->
+            @foreach($articles as $article)
+              <tr>
+                <td>{{$article->id}}</td>
+                <td>{{$article->title}}</td>
+                <td><button class="btn btn-danger">Hapus</button></td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

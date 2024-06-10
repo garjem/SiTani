@@ -29,14 +29,16 @@
             </tr>
           </thead>
           <tbody>
+            @foreach($users as $user)
               <tr>
-                <td>1</td>
-                <td>Mas</td>
-                <td>azri@gmail.com</td>
-                <td>08762791</td>
+                <td>{{$user->id}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->no_wa}}</td>
                 <td><button class="btn btn-primary">Ubah</button>
                 <button class="btn btn-danger">Hapus</button></td>
               </tr>
+            @endforeach  
           </tbody>
         </table>
       </div>

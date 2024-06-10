@@ -29,15 +29,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Wortel</td>
-              <td>5.000</td>
-              <td>Stok</td>
-              <td><button class="btn btn-primary">Ubah</button>
-              <button class="btn btn-danger">Hapus</button></td>
-            </tr>
-            <!-- Tambahkan data pelanggan lainnya di sini -->
+            @foreach($products as $product)
+              <tr>
+                <td>{{$product->id}}</td>
+                <td>{{$product->name}}</td>
+                <td>{{$product->price}}</td>
+                <td>{{$product->stock}}</td>
+                <td><button class="btn btn-primary">Ubah</button>
+                <button class="btn btn-danger">Hapus</button></td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </div>
