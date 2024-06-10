@@ -34,7 +34,8 @@
               <td>Tumbuhan yang Cocok untuk Bertani</td>
               <td>9 Mei 2024</td>
               <td>Wincorp</td>
-              <td><button class="btn btn-primary">Ubah</button></td>
+              <td><button class="btn btn-primary">Ubah</button>
+              <button class="btn btn-danger">Hapus</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->
           </tbody>
