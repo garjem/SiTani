@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('admin.mainadmin')
 @section('Title', 'faq Admin')
 
 @section('css')
