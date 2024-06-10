@@ -6,14 +6,6 @@
     <title>Pengajuan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar.bg-body-tertiary {
-            background-color: #58A399 !important;
-        }
-
-        .navbar-nav .nav-link {
-            color: white;
-        }
-
         .btn-whatsapp {
             background-color: #58A399;
             color: white;
