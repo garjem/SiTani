@@ -17,12 +17,12 @@
             background-color: #66A6A4;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px; /* Tambahkan lebih banyak padding */
             text-align: center;
-            font-size: 16px;
+            font-size: 18px; /* Perbesar ukuran font */
             cursor: pointer;
             transition: background-color 0.3s ease;
-            border-radius: 0; /* Ubah border-radius menjadi 0 */
+            border-radius: 10px; /* Atur border-radius menjadi 10px */
             width: 100%; /* Set lebar tombol */
             max-width: 400px; /* Set lebar maksimal tombol */
         }
