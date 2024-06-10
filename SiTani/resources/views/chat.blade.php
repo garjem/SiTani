@@ -144,8 +144,6 @@
     });
 </script>
 
-
-
 <style>
    /* Styling tombol chat */
     .chat-button {
@@ -196,7 +194,12 @@
         width: 25%;
         overflow-y: auto;
         border-right: 1px solid #ccc;
-        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-list ul {
+        width: 100%;
         padding: 0;
         margin: 0;
     }
@@ -323,5 +326,4 @@
         margin: 0 10px;
         white-space: nowrap;
     }
-
 </style>
