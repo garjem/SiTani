@@ -84,5 +84,5 @@ Route::get('/dashboardworkshop', [DashboardController::class.'index4']);
 
 Route::get('/wishlist', function () {
     return view('wishlist'); 
-
 });
+
