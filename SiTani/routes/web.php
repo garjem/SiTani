@@ -74,7 +74,7 @@ Route::get('/dashboardmitra', function () {
 });
 Route::get('/dashboardproduk', function () {
     return view('admin.dashboardproduk'); 
-
+});
 
 Route::get('/dashboardadmin',[DashboardController::class,'index']);
 Route::get('/dashboardartikel',[DashboardController::class,'index1']);
