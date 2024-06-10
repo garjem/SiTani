@@ -34,7 +34,8 @@
               <td>Wincorp</td>
               <td>0857xxxxxxxx</td>
               <td>wincorp@gmail.com</td>
-              <td><button class="btn btn-primary">Ubah</button></td>
+              <td><button class="btn btn-primary">Ubah</button>
+              <button class="btn btn-danger">Hapus</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->
           </tbody>

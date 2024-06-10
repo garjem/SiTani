@@ -34,7 +34,8 @@
               <td>Wortel</td>
               <td>5.000</td>
               <td>Stok</td>
-              <td><button class="btn btn-primary">Ubah</button></td>
+              <td><button class="btn btn-primary">Ubah</button>
+              <button class="btn btn-danger">Hapus</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->
           </tbody>

@@ -49,6 +49,7 @@ Route::post('order' , [\App\Http\Controllers\CartController::class , 'order'])->
 Route::get('/order/list' , [\App\Http\Controllers\CartController::class , 'orderList'])->name('order.list');
 Route::put('/order/list/{id}' , [\App\Http\Controllers\CartController::class , 'addReview'])->name('order.addReview');
 
+Route::get('users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 Route::get('/dashboardadmin', function () {
     return view('admin.dashboard'); 
 });

@@ -24,19 +24,19 @@
               <th>ID</th>
               <th>Nama Pelanggan</th>
               <th>Email</th>
-              <th>Kata Sandi</th>
+              <th>Nomor Handphone</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>azri</td>
-              <td>azri@gmail.com</td>
-              <td>********</td>
-              <td><button class="btn btn-primary">Ubah</button></td>
-            </tr>
-            <!-- Tambahkan data pelanggan lainnya di sini -->
+              <tr>
+                <td>1</td>
+                <td>Mas</td>
+                <td>azri@gmail.com</td>
+                <td>08762791</td>
+                <td><button class="btn btn-primary">Ubah</button>
+                <button class="btn btn-danger">Hapus</button></td>
+              </tr>
           </tbody>
         </table>
       </div>

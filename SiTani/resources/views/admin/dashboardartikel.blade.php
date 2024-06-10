@@ -34,7 +34,7 @@
               <td>Tumbuhan yang Cocok untuk Bertani</td>
               <td>FunFact</td>
               <td>Writer</td>
-              <td><button class="btn btn-primary">Ubah</button></td>
+              <td><button class="btn btn-danger">Hapus</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->
           </tbody>
