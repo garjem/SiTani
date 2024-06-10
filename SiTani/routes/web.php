@@ -4,22 +4,18 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DetailProdukController;
 use App\Http\Controllers\faqController;
+
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\reviewController;
 use App\Http\Controllers\artikelController;
+
+use App\Http\Controllers\ChatController;
+
 use App\Http\Controllers\BelanjaController;
+use App\Http\Controllers\ContactController;
 
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -28,11 +24,11 @@ Route::get('/', function () {
     return view('landingPage.landingPage');
 });
 
+
 Route::get('/belanja',[BelanjaController::class,'index']);
 Route::get('/Artikel',[artikelController::class,'index']);
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
-
-Route::get('/belanja',[BelanjaController::class,'index']);
 
 Auth::routes();
 Route::get('/editProfile' , [\App\Http\Controllers\LandingController::class , 'editProfile'])->name('editProfile');
@@ -43,7 +39,6 @@ Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
 Route::post('/inputFaq', [faqController::class, 'create'])->name('inputFaq');
 Route::get('/deleteFaq/{id}', [faqController::class, 'delete'])->name('deleteFaq');
 Route::get('/review', [reviewController::class, 'viewReview'])->name('review');
-
 
 Auth::routes();
 

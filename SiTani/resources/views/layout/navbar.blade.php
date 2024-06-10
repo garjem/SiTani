@@ -1,46 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        .navbar.bg-body-tertiary {
-            background-color: #58A399 !important;
-        }
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1 text-white" href="#">SiTani</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav nav-underline">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="workshop">Workshop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="belanja">Belanja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="artikel">Artikel</a>
+                </li>
+            </ul>
+        </div>
+        <a class="navbar-brand" href="#">
+            <img src="keranjang.png" width="30" height="30">
+        </a>
+        <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <img src="profile.png" width="30" height="30">
+        </a>
+    </div>
+</nav>
 
-        .navbar-nav .nav-link {
-            color: white;
-        }
-    </style>
-</head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 text-white">SiTani</span>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav nav-underline">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Workshop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Belanja</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Artikel</a>
-                        </li>
-                    </ul>
-                </div>
-                <a class="navbar-brand" href="#">
-                    <img src="keranjang.png" width="40" height="40">
-                </a>
-                <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    <img src="profile.png" width="40" height="40">
-                </a>
-            </div>
-    </nav>
+<style>
+    .navbar.bg-body-tertiary {
+        background-color: #58A399 !important;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+    }
+
+    .nav-underline .nav-link.active {
+        border-bottom: 2px solid white; /* Warna garis bawah */
+    }
+</style>
 
 <!-- modal 1 -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -84,8 +83,21 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap JS (Include this if not already included) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 
-</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                navLinks.forEach(function (navLink) {
+                    navLink.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
