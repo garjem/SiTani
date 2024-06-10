@@ -10,7 +10,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #F8F9FA;
+            background-color: #f8f9fa;
+            padding-top: 20px;
         }
         .container {
             display: flex;
@@ -27,18 +28,20 @@
             background-color: white;
         }
         .btn {
-            background-color: #68A594;
+            background-color: #68a594;
             color: white;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
         .form-control {
             border-radius: 10px;
+            margin-bottom: 10px;
         }
         .profile-picture {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: #E5E5E5;
+            background-color: #e5e5e5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,6 +55,25 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
+        .modal-content {
+            border-radius: 15px;
+        }
+        .modal-body a {
+            color: #000;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .modal-body a:last-child {
+            border-bottom: none;
+        }
+        .modal-body a:hover {
+            background-color: #f0f0f0;
+        }
+        .modal-body a.logout {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -61,26 +83,134 @@
                 <i class="fas fa-user"></i>
             </div>
             <h5 class="card-title">{{ Auth::user() ? Auth::user()->name : 'User' }}</h5>
-            <form method="POST" action="{{ route('profile.update') }}">
-                @csrf
-                @method('PUT')
-                <div class="form-group">
-                    <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user() ? Auth::user()->name : '' }}" required placeholder="Name">
+            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#profileModal">Ubah Profil</button>
+            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#settingsModal">Pengaturan</button>
+            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#faqModal">Frequently Asked Question</button>
+            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#partnerModal">Pengajuan Mitra</button>
+            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#logoutModal">Keluar</button>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">Edit Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" name="email" value="{{ Auth::user() ? Auth::user()->email : '' }}" required placeholder="Email address">
+                <div class="modal-body text-center">
+                    <div class="profile-picture mb-3">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h5 class="card-title mb-3">{{ Auth::user() ? Auth::user()->name : 'User' }}</h5>
+                    <form method="POST" action="{{ route('profile.update') }}">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user() ? Auth::user()->name : '' }}" required placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" value="{{ Auth::user() ? Auth::user()->email : '' }}" required placeholder="Email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" id="phone_number" name="no_wa" value="{{ Auth::user() ? Auth::user()->no_wa : '' }}" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="new_password" name="new_password" required placeholder="Kata Sandi Baru">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required placeholder="Konfirmasi Kata Sandi">
+                        </div>
+                        <button type="submit" class="btn btn-block">Simpan</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="tel" class="form-control" id="phone_number" name="no_wa" value="{{ Auth::user() ? Auth::user()->no_wa : '' }}" placeholder="Phone Number">
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">Pengaturan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="new_password" name="new_password" required placeholder="Kata Sandi Baru">
+                <div class="modal-body">
+                    <!-- Pengaturan content here -->
+                    Pengaturan akan ditambahkan di sini.
                 </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required placeholder="Konfirmasi Kata Sandi">
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="faqModalLabel">Frequently Asked Question</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <button type="submit" class="btn btn-block">Simpan</button>
-            </form>
+                <div class="modal-body">
+                    <!-- FAQ content here -->
+                    Pertanyaan yang Sering Diajukan akan ditambahkan di sini.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Modal -->
+    <div class="modal fade" id="partnerModal" tabindex="-1" role="dialog" aria-labelledby="partnerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="partnerModalLabel">Pengajuan Mitra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Pengajuan Mitra content here -->
+                    Pengajuan Mitra akan ditambahkan di sini.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Keluar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Logout content here -->
+                    Anda yakin ingin keluar?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <a href="{{ route('logout') }}" class="btn btn-danger logout"
+                        onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                        Keluar
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -92,3 +222,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
+

@@ -55,6 +55,27 @@ Route::get('/order/list' , [\App\Http\Controllers\CartController::class , 'order
 Route::put('/order/list/{id}' , [\App\Http\Controllers\CartController::class , 'addReview'])->name('order.addReview');
 
 
+Route::prefix('admin')->middleware('admin')->group(function (){
+    Route::get('/dashboard' , [ \App\Http\Controllers\AdminController::class , 'index'])->name('admin.index');
+    Route::get('/orderlist', [\App\Http\Controllers\AdminController::class , 'orderList'])->name('admin.orderList');
+    Route::put('/orders/cancel/{id}', [\App\Http\Controllers\AdminController::class, 'cancelOrder'])->name('orders.cancel');
+    Route::put('/orders/send/{id}', [\App\Http\Controllers\AdminController::class, 'sendOrder'])->name('orders.send');
+});
+
+
+Route::get('/dashboardadmin', function () {
+    return view('admin.dashboard'); 
+});
+Route::get('/dashboardartikel', function () {
+    return view('admin.dashboardartikel'); 
+});
+Route::get('/dashboardmitra', function () {
+    return view('admin.dashboardmitra'); 
+});
+Route::get('/dashboardproduk', function () {
+    return view('admin.dashboardproduk'); 
+
+
 Route::get('/dashboardadmin',[DashboardController::class,'index']);
 Route::get('/dashboardartikel',[DashboardController::class,'index1']);
 Route::get('/dashboardmitra', [DashboardController::class,'index2']);
@@ -63,4 +84,5 @@ Route::get('/dashboardworkshop', [DashboardController::class.'index4']);
 
 Route::get('/wishlist', function () {
     return view('wishlist'); 
+
 });
