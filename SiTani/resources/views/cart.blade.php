@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('/layout/navbar')
 <div class="section p-5">
     <div class="card m-5 p-5">
         <h2 class="mb-4">Keranjang</h2>
