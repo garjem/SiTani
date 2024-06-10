@@ -33,6 +33,7 @@
     </style>
 </head>
 <body>
+    ppp
     @include('/layout/navbar')
     <main>
         <div class="container mt-5 text-center">
