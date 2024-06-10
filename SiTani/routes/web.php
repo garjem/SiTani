@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DetailProdukController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +26,4 @@ Route::get('/faq', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/detailproduk', [DetailProdukController::class, 'index']);
