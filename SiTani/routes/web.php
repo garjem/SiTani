@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\faqController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\BelanjaController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/belanja',[BelanjaController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Auth::routes();
 
