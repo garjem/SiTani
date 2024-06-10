@@ -1,5 +1,5 @@
 @extends('layouts.app')
-fds
+
 @section('content')
 @include('/layout/navbar')
 <div class="section p-5">
