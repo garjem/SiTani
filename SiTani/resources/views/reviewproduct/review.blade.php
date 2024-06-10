@@ -1,5 +1,5 @@
-@extends('layout.main')
-@section('Title', 'faq')
+@extends('layouts.app')
+@section('Title', 'REVIEW')
 
 @section('Content')
 <style>
