@@ -1,47 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-    .card {
-        border: none;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .table thead th {
-        border-bottom: none;
-    }
-    .table tbody td {
-        vertical-align: middle;
-    }
-    .btn-outline-secondary {
-        background-color: #ffffff;
-        border-color: #0d9488;
-        color: #0d9488;
-    }
-    .btn-outline-secondary:hover {
-        background-color: #0d9488;
-        color: #ffffff;
-    }
-    .btn-danger {
-        background-color: #ef4444;
-        border: none;
-    }
-    .btn-danger:hover {
-        background-color: #dc2626;
-    }
-    .btn-primary {
-        background-color: #0d9488;
-        border: none;
-    }
-
-    .modal-header, .modal-footer {
-        border: none;
-    }
-    .form-control:focus {
-        border-color: #0d9488;
-        box-shadow: none;
-    }
-</style>
-
 <div class="section p-5">
     <div class="card m-5 p-5">
         <h2 class="mb-4">Keranjang</h2>
@@ -63,9 +22,9 @@
                     <td>{{ $cart->product->name }}</td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#editCartItemModal{{ $cart->id }}">-</button>
+                            <button class="btn btn-outline-secondary btn-sm mx-2" data-toggle="modal" data-target="#editCartItemModal{{ $cart->id }}">-</button>
                             {{ $cart->quantity }}
-                            <button class="btn btn-outline-secondary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#editCartItemModal{{ $cart->id }}">+</button>
+                            <button class="btn btn-outline-secondary btn-sm mx-2" data-toggle="modal" data-target="#editCartItemModal{{ $cart->id }}">+</button>
                         </div>
                     </td>
                     <td>{{ number_format($cart->product->price * $cart->quantity, 0, ',', '.') }}</td>
@@ -85,7 +44,9 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="editCartItemModal{{ $cart->id }}Label">Edit Quantity</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <form method="POST" action="{{ route('cart.update', $cart->id) }}">
                                 @csrf
@@ -97,7 +58,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary">Save changes</button>
                                 </div>
                             </form>
@@ -110,7 +71,7 @@
                     <td colspan="3"></td>
                     <td><strong>Total:</strong> Rp{{ number_format($tots, 0, ',', '.') }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#checkoutModal">
                             Checkout
                         </button>
                     </td>
@@ -126,7 +87,9 @@
         <div class="modal-content">
             <div class="modal-header bg-white text-dark">
                 <h5 class="modal-title" id="checkoutModalLabel">Upload Bukti Transfer</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <form method="post" action="{{ route('order') }}" enctype="multipart/form-data">
                 @csrf
@@ -138,12 +101,11 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center bg-light">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-success">Upload</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
 @endsection
