@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DetailProdukController;
 use App\Http\Controllers\faqController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\reviewController;
-
 use App\Http\Controllers\artikelController;
 use App\Http\Controllers\BelanjaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -58,21 +59,12 @@ Route::post('order' , [\App\Http\Controllers\CartController::class , 'order'])->
 Route::get('/order/list' , [\App\Http\Controllers\CartController::class , 'orderList'])->name('order.list');
 Route::put('/order/list/{id}' , [\App\Http\Controllers\CartController::class , 'addReview'])->name('order.addReview');
 
-Route::get('/dashboardadmin', function () {
-    return view('admin.dashboard'); 
-});
-Route::get('/dashboardartikel', function () {
-    return view('admin.dashboardartikel'); 
-});
-Route::get('/dashboardmitra', function () {
-    return view('admin.dashboardmitra'); 
-});
-Route::get('/dashboardproduk', function () {
-    return view('admin.dashboardproduk'); 
-});
-Route::get('/dashboardworkshop', function () {
-    return view('admin.dashboardworkshop'); 
-});
+
+Route::get('/dashboardadmin',[DashboardController::class,'index']);
+Route::get('/dashboardartikel',[DashboardController::class,'index1']);
+Route::get('/dashboardmitra', [DashboardController::class,'index2']);
+Route::get('/dashboardproduk', [DashboardController::class,'index3']);
+Route::get('/dashboardworkshop', [DashboardController::class.'index4']);
 
 Route::get('/wishlist', function () {
     return view('wishlist'); 

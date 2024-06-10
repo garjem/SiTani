@@ -24,19 +24,21 @@
               <th>ID</th>
               <th>Nama Pelanggan</th>
               <th>Email</th>
-              <th>Kata Sandi</th>
+              <th>Nomor Handphone</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>azri</td>
-              <td>azri@gmail.com</td>
-              <td>********</td>
-              <td><button class="btn btn-primary">Ubah</button></td>
-            </tr>
-            <!-- Tambahkan data pelanggan lainnya di sini -->
+            @foreach($users as $user)
+              <tr>
+                <td>{{$user->id}}</td>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->no_wa}}</td>
+                <td><button class="btn btn-primary">Ubah</button>
+                <button class="btn btn-danger">Hapus</button></td>
+              </tr>
+            @endforeach  
           </tbody>
         </table>
       </div>
