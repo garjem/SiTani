@@ -22,9 +22,9 @@
                     <td>{{ $cart->product->name }}</td>
                     <td>
                         <div class="d-flex align-items-center">
-                            <button class="btn btn-outline-secondary btn-sm mx-2" data-toggle="modal" data-target="#editCartItemModal{{ $cart->id }}">-</button>
+                            <button class="btn btn-outline-secondary btn-sm me-2" data-toggle="modal" data-target="#editCartItemModal{{ $cart->id }}">-</button>
                             {{ $cart->quantity }}
-                            <button class="btn btn-outline-secondary btn-sm mx-2" data-toggle="modal" data-target="#editCartItemModal{{ $cart->id }}">+</button>
+                            <button class="btn btn-outline-secondary btn-sm ms-2" data-toggle="modal" data-target="#editCartItemModal{{ $cart->id }}">+</button>
                         </div>
                     </td>
                     <td>{{ number_format($cart->product->price * $cart->quantity, 0, ',', '.') }}</td>
