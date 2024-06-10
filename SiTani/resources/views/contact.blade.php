@@ -31,10 +31,8 @@
             padding-top: 50px; /* Adjust the padding based on the height of your navbar */
         }
     </style>
-    
 </head>
 <body>
-    
     @include('/layout/navbar')
     <main>
         <div class="container mt-5 text-center">
