@@ -1,9 +1,10 @@
-@extends('admin.layout')
+@extends('admin.navbaradmin')
 
 @section('content')
     <div class="row m-4">
         <div class="card p-3">
-            <h2 class="m-3">Order List</h2>
+            <h2 class="m-3">List Order</h2>
+
 
             <table class="table" id="table-ow">
                 <thead>
@@ -19,27 +20,15 @@
                 <tbody>
                 @foreach($orders as $order)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $order->id }}</td>
                         <td>{{ $order->user->name }}</td>
                         <td>{{ $order->bukti_trf }}</td>
                         <td>{{ $order->status }}</td>
-                        <td>{{ number_format($order->total, 0, ',', '.') }}</td>
+                        <td>{{ $order->total }}</td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal{{ $order->id }}">
                                 View Items
                             </button>
-                            @php
-                                $review = $order->reviews->first();
-                            @endphp
-                            @if($review && $review->status == 'yes')
-                                <button type="button" class="btn btn-secondary">
-                                    <a href="{{ route('order.list') }}" style="color:white">Review</a>
-                                </button>
-                            @else
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ $review ? $review->id : 'new' }}">
-                                    Review
-                                </button>
-                            @endif
                         </td>
                     </tr>
 
@@ -70,11 +59,11 @@
                                     <tbody>
                                     @foreach($order->items as $item)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->id }}</td>
                                             <td>{{ $item->product->name }}</td>
                                             <td>{{ $item->quantity }}</td>
-                                            <td>{{ number_format($item->product->price, 0, ',', '.') }}</td>
-                                            <td>{{ number_format($item->quantity * $item->product->price, 0, ',', '.') }}</td>
+                                            <td>{{ $item->product->price }}</td>
+                                            <td>{{ $item->quantity * $item->product->price }}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -97,52 +86,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Modal Edit Review -->
-                @if($review)
-                    <div class="modal fade" id="editModal{{ $review->id }}" tabindex="-1" aria-labelledby="editModal{{ $review->id }}Label" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editModal{{ $review->id }}Label">Add Review</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="{{ route('order.addReview', $review->id) }}" method="POST" enctype="multipart/form-data">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="mb-3">
-                                            <label for="review" class="form-label">Review</label>
-                                            <input type="text" class="form-control" id="review" name="review" value="{{ $review->comment }}">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Add Review</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @else
-                    <div class="modal fade" id="editModalnew" tabindex="-1" aria-labelledby="editModalnewLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="editModalnewLabel">Add Review</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form action="{{ route('order.addReview', ['id' => 'new']) }}" method="POST" enctype="multipart/form-data">
-                                        @csrf
-                                        <div class="mb-3">
-                                            <label for="review" class="form-label">Review</label>
-                                            <input type="text" class="form-control" id="review" name="review">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Add Review</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endif
             @endforeach
 
         </div>
@@ -154,5 +97,6 @@
         let table = new DataTable('#table-ow', {
             // options
         });
+
     </script>
 @endpush
