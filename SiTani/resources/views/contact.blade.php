@@ -43,7 +43,7 @@
             <a href="https://wa.me/6281287157805" class="btn-whatsapp mt-3">Whatsapp</a>
 
             <h1 class="mt-5">Konsultasi lebih lanjut</h1>
-            <a href="https://wa.me/6281234567890" class="btn-whatsapp mt-3">Whatsapp</a>
+            <a href="https://wa.me/6281287157805" class="btn-whatsapp mt-3">Whatsapp</a>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
