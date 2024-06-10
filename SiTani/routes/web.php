@@ -27,9 +27,6 @@ Route::get('/', function () {
 Route::get('/belanja',[BelanjaController::class,'index']);
 Route::get('/Artikel',[artikelController::class,'index']);
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
 Route::get('/belanja',[BelanjaController::class,'index']);
 

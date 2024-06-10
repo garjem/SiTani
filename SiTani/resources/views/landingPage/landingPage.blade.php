@@ -137,7 +137,7 @@
                     Login
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loginDropdown">
-                    <a class="dropdown-item" href="#">User</a>
+                    <a class="dropdown-item" href="/login">User</a>
                     <a class="dropdown-item" href="#">Mitra</a>
                     <a class="dropdown-item" href="#">Admin</a>
                 </div>
