@@ -9,12 +9,20 @@ class Product extends Model
 {
     use HasFactory;
 
+    // Nama tabel di database
+    protected $table = 'products';
 
+    // Kolom yang dapat diisi (mass assignable)
     protected $fillable = [
-        'name', 'description', 'category_id', 'price', 'image'
+        'name',
+        'description',
+        'price',
+        'stock',
+        'category_id',
+        'image',
     ];
 
-    
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -28,3 +36,4 @@ class Product extends Model
         return $this->hasOne(Review::class);
     }
 }
+
