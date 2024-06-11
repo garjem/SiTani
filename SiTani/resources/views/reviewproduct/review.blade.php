@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.main')
 @section('Title', 'REVIEW')
 
 @section('Content')
@@ -79,71 +79,30 @@
         margin-top: 0.5rem;
         font-size: 0.9rem;
     }
+    .star{
+        color:#ffb254
+    }
 </style>
 
 <div class="wrapper">
     <div class="card">
+        @foreach($data as $d)
         <div class="card-body">
             <div class="user-review" id="childCard">
-                <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture">
+                <!-- <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture"> -->
                 <div>
-                    <div class="name">aming</div>
+                    <!-- <div class="name">aming</div> -->
                     <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" checked>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
+                        @for($bintang = 0; $bintang<$d['Rating']; $bintang++)
+                        <p for="star5" class="star">★</p>
+                        @endfor
+                        
                     </div>
-                    <div class="comment">Enak</div>
-                </div>
-            </div>
-
-            <div class="user-review" id="childCard">
-                <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture">
-                <div>
-                    <div class="name">aming</div>
-                    <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" checked>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
-                    </div>
-                    <div class="comment">Bagus wortelnya</div>
-                </div>
-            </div>
-
-            <div class="user-review" id="childCard">
-                <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture">
-                <div>
-                    <div class="name">aming</div>
-                    <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" checked>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
-                    </div>
-                    <div class="comment">Bagus wortelnya</div>
+                    <div class="comment">{{ $d['Deskripsi']}}</div>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 

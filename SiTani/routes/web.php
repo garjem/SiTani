@@ -39,7 +39,8 @@ Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
 Route::post('/inputFaq', [faqController::class, 'create'])->name('inputFaq');
 Route::get('/deleteFaq/{id}', [faqController::class, 'delete'])->name('deleteFaq');
 Route::get('/review', [reviewController::class, 'viewReview'])->name('review');
-Route::get('/reviewform', [reviewController::class, 'create'])->name('reviewform');
+Route::get('/reviewform', [reviewController::class, 'reviewForm'])->name('reviewform');
+Route::post('/refiewform/input', [reviewController::class, 'createreview'])->name('review.store');
 
 
 Auth::routes();

@@ -28,8 +28,6 @@
 @endsection
 
 @section('Content')
-<body>
-
 <div class="d-flex justify-content-center">
     <div class="my-xxl-5">
         <h1>Review</h1>
@@ -56,22 +54,21 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Deskripsi</label>
-                    <input type="text" class="form-control" name="????" id="description" placeholder="Masukan Deskripsi">
+                    <input type="text" class="form-control" name="deskripsi" id="description" placeholder="Masukan Deskripsi">
                 </div>
                 
-            </form>
-        </div>
+            </div>
         <div class="card-footer ">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+    </form>
     </div>
 </div>
 <!-- end form -->
 
-</body>
 @endsection
 
-     <!-- end form -->
+    <!-- end form -->
 
     <!-- <form method="POST" action="{{ route('review') }}" enctype="multipart/form-data">
         @csrF

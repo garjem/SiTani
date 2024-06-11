@@ -2,25 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\reviewsitani;
 use Illuminate\Http\Request;
 
 class reviewController extends Controller
 {
     public function viewReview (){
-        return view ('reviewproduct.review');
+        $data = reviewsitani::all();
+        return view ('reviewproduct.review', compact('data'));
     }
 
-    Public function create (Request $request)
+    public function reviewForm (){
+        return view ('reviewproduct.reviewform');
+    }
+
+    Public function createreview (Request $request)
     {
-        review::create ([
-            'header' => $request->header,
-            'content'=> $request->content,
+        reviewsitani::create ([
+            'Rating' => $request->rating,
+            'Deskripsi'=> $request->deskripsi,
         ]);
         return back();
-    }
-
-    public function input() {
-        return view ('review/input');
     }
 }
 
