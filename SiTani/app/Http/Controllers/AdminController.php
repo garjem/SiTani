@@ -11,9 +11,14 @@ class AdminController extends Controller
             return view('admin.dashboard');
         }
 
+        // public function orderList(){
+        //     $orders = Order::orderBy('created_at', 'desc')->get();
+        //     return view('admin.orderList' , compact('orders'));
+        // }
+
         public function orderList(){
-            $orders = Order::orderBy('created_at', 'desc')->get();
-            return view('admin.orderList' , compact('orders'));
+            $orders = Order::with(['user', 'items.product'])->orderBy('created_at', 'desc')->get();
+            return view('admin.orderList', compact('orders'));
         }
 
     public function cancelOrder($id)

@@ -1,7 +1,31 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('content')
-@include('/layout/navbar')
+@include('/layout/navbar') -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .modal-header, .modal-footer {
+            background-color: #f8f9fa;
+        }
+        .btn-custom {
+            background-color: #ff4081;
+            color: white;
+        }
+        .btn-custom-secondary {
+            background-color: #757575;
+            color: white;
+        }
+    </style>
+</head>
+<body>
 <div class="section p-5">
     <div class="card m-5 p-5">
         <h2 class="mb-4">Keranjang</h2>
@@ -110,3 +134,8 @@
     </div>
 </div>
 @endsection
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

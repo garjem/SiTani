@@ -42,14 +42,17 @@
         <a class="nav-link" href="dashboardartikel">Artikel</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="dashboardmitra">Mitra</a>
+        <a class="nav-link" href="/dashboardmitra">Mitra</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/admin/orderlist">Order List</a>
       </li>
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item dropstart">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Profil</a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Ubah Profil</a></li>
+            <li><a class="dropdown-item" href="/editProfile">Ubah Profil</a></li>
             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Pengaturan</a></li>
             <li><a class="dropdown-item" href="#">FAQ</a></li>
             <li><a class="dropdown-item" href="#">Pengajuan Mitra</a></li>
