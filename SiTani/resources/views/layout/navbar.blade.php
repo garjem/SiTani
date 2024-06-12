@@ -15,12 +15,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-page="artikel">Artikel</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart" data-page="cart">Keranjang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/order/list" data-page="orderList">Pesanan</a>
+                </li>
             </ul>
         </div>
         <a class="navbar-brand" href="#">
             <img src="keranjang.png" width="30" height="30">
         </a>
-        <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+        <a class="navbar-brand" href="//editProfile" data-bs-toggle="modal" data-bs-target="#exampleModal1">
             <img src="profile.png" width="30" height="30">
         </a>
     </div>
@@ -46,12 +52,12 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel1">Profil</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel1" >Profil</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body d-flex flex-column align-items-center">
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button class="btn btn-light" type="button">Ubah Profil</button>
+          <button class="btn btn-light" type="button" href="/editProfile">Ubah Profil</button>
           <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2">Pengaturan</button>
           <button class="btn btn-light" type="button">FAQ</button>
           <button class="btn btn-light" type="button">Pengajuan Mitra</button>
@@ -62,7 +68,7 @@
   </div>
 </div>
 
-<!-- modal 2 -->
+modal 2
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
