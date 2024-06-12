@@ -8,6 +8,8 @@
     <style>
         body {
             background-color: #f5f5f5;
+            padding-top: 80px; /* Adjust the padding based on the height of your navbar */
+            padding-bottom: 30px
         }
         .container {
             margin-top: 50px;
