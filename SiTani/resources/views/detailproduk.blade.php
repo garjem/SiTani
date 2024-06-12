@@ -141,7 +141,6 @@
 </header>
 <main>
 
-    
     <div class="container">
         <div class="row spacing-bottom">
             @foreach ($products as $product)
@@ -158,13 +157,13 @@
                 <p class="spacing-bottom">{{ $product->description }}</p>
                 <div class="d-flex justify-content-between align-items-center spacing-bottom">
                     <h2 class="me-3">Rp{{ number_format($product->price, 0, ',', '.') }}/Kg</h2>
-                    <a href="/reviews" class="text-decoration-none text-dark">
+                    <a href="/review" class="text-decoration-none text-dark">
                         <div class="d-flex align-items-center">
                             <span class="rating">
                                 {!! str_repeat('<span class="filled">★</span>', $product->rating) !!}
                                 {!! str_repeat('★', 5 - $product->rating) !!}
                             </span>
-                            <span>{{ $product->reviews }} ulasan</span>
+                            <span>{{ $product->review }} ulasan</span>
                         </div>
                     </a>
                 </div>
@@ -172,16 +171,16 @@
                     <div class="quantity-container">
                         <label for="quantity">Stok: {{ $product->stock }} Kg</label>
                         <div class="d-flex align-items-center ms-2">
-                            <button class="btn btn-outline">-</button>
+                            <button id="decrement" class="btn btn-outline">-</button>
                             <input type="text" id="quantity" value="1" class="form-control mx-2" style="width: 50px; text-align: center;">
-                            <button class="btn btn-outline">+</button>
+                            <button id="increment" class="btn btn-outline">+</button>
                         </div>
                     </div>
                     <span class="favorite-icon">❤</span>
                 </div>
                 <div class="subtotal-container spacing-bottom">
                     <h3>Subtotal:</h3>
-                    <h3>Rp{{ number_format($product->price, 0, ',', '.') }}</h3>
+                    <h3 id="subtotal">Rp{{ number_format($product->price, 0, ',', '.') }}</h3>
                 </div>
                 <div class="button-container">
                     <button class="add-to-cart-button">Tambahkan ke Keranjang</button>
@@ -194,5 +193,47 @@
         </div>
     </div>
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const decrementButton = document.getElementById('decrement');
+        const incrementButton = document.getElementById('increment');
+        const quantityInput = document.getElementById('quantity');
+        const subtotalElement = document.getElementById('subtotal');
+        const price = {{ $product->price }}; // Mendapatkan harga produk
+        const stock = {{ $product->stock }}; // Mendapatkan stok produk
+
+        function updateSubtotal() {
+            const quantity = parseInt(quantityInput.value);
+            const subtotal = price * quantity;
+            subtotalElement.textContent = 'Rp' + subtotal.toLocaleString('id-ID');
+        }
+
+        decrementButton.addEventListener('click', function() {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity > 1) {
+                quantityInput.value = quantity - 1;
+                updateSubtotal();
+            }
+        });
+
+        incrementButton.addEventListener('click', function() {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity < stock) {
+                quantityInput.value = quantity + 1;
+                updateSubtotal();
+            }
+        });
+
+        quantityInput.addEventListener('input', function() {
+            let quantity = parseInt(quantityInput.value);
+            if (quantity < 1) {
+                quantityInput.value = 1;
+            } else if (quantity > stock) {
+                quantityInput.value = stock;
+            }
+            updateSubtotal();
+        });
+    });
+</script>
 </body>
 </html>
