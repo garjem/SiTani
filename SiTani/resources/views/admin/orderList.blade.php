@@ -1,5 +1,5 @@
-@extends('admin.navbaradmin')
 
+@extends('admin.mainadmin')
 @section('content')
     <div class="row m-4">
         <div class="card p-3">
