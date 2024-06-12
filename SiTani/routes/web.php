@@ -74,12 +74,7 @@ Route::get('/dashboardmitra', function () {
 });
 Route::get('/dashboardproduk', function () {
     return view('admin.dashboardproduk'); 
-<<<<<<< HEAD
 });  
-
-=======
-});
->>>>>>> bf1706e2e03faa5597d9fd22ab73a8acaf1577f0
 
 Route::get('/dashboardadmin',[DashboardController::class,'index']);
 Route::get('/dashboardartikel',[DashboardController::class,'index1']);
@@ -90,8 +85,3 @@ Route::get('/dashboardworkshop', [DashboardController::class.'index4']);
 Route::get('/wishlist', function () {
     return view('wishlist'); 
 });
-
-<<<<<<< HEAD
-
-=======
->>>>>>> bf1706e2e03faa5597d9fd22ab73a8acaf1577f0
