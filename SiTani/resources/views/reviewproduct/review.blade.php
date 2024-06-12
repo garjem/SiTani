@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('Title', 'faq')
+@section('Title', 'Ulasan Produk')
 
 @section('Content')
 <style>
@@ -8,7 +8,7 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background-color: #f5f5f5; /* Background color to match the design */
+        background-color: #f5f5f5;
     }
 
     .card {
@@ -84,65 +84,22 @@
 <div class="wrapper">
     <div class="card">
         <div class="card-body">
+            <h2>Ulasan untuk {{ $product->name }}</h2>
+            @foreach ($reviews as $review)
             <div class="user-review" id="childCard">
-                <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture">
+                <img src="{{ asset('path/to/profile-image.png') }}" alt="User profile picture">
                 <div>
-                    <div class="name">aming</div>
+                    <div class="name">{{ $review->user->name }}</div>
                     <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" checked>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
+                        @for ($i = 1; $i <= 5; $i++)
+                            <input type="radio" id="star{{ $i }}" name="rating" value="{{ $i }}" {{ $review->rating == $i ? 'checked' : '' }}>
+                            <label for="star{{ $i }}">★</label>
+                        @endfor
                     </div>
-                    <div class="comment">Enak</div>
+                    <div class="comment">{{ $review->comment }}</div>
                 </div>
             </div>
-
-            <div class="user-review" id="childCard">
-                <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture">
-                <div>
-                    <div class="name">aming</div>
-                    <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" checked>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
-                    </div>
-                    <div class="comment">Bagus wortelnya</div>
-                </div>
-            </div>
-
-            <div class="user-review" id="childCard">
-                <img src="{{ URL('/path/to/profile-image.png') }}" alt="User profile picture">
-                <div>
-                    <div class="name">aming</div>
-                    <div class="rating">
-                        <input type="radio" id="star5" name="rating" value="5" checked>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
-                    </div>
-                    <div class="comment">Bagus wortelnya</div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiTani - Belanja</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>SiTani - Detail Produk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .navbar.bg-body-tertiary {
-            background-color: #58A399 !important;
+        body {
+            padding-top: 55px; /* Adjust the padding based on the height of your navbar */
+            padding-bottom: 30px;
         }
-        .navbar-nav .nav-link {
-            color: white;
+        .container .row {
+            margin-top: 70px;
         }
         .custom-image-size {
-            width: 470px;
-            height: 470px;
+            width: 546px;
+            height: 347px;
         }
         .product-image {
             border-radius: 10px;
@@ -110,97 +111,98 @@
             background-color: #58A399;
             color: white;
         }
+        .review-container {
+            margin-top: 50px;
+        }
+        .review-item {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .review-item .review-user {
+            font-weight: bold;
+        }
+        .review-item .review-comment {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1 text-white">SiTani</span>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Workshop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Belanja</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Artikel</a>
-                    </li>
-                </ul>
-            </div>
-            <a class="navbar-brand" href="#">
-                <img src="/assets/keranjang.png" width="30" height="30">
-            </a>
-            <a class="navbar-brand" href="#">
-                <img src="/assets/profile.png" width="30" height="30">
-            </a>
-        </div>
-    </nav>
-</header>
-<main>
-
-    <div class="container">
-        <div class="row spacing-bottom">
-            @foreach ($products as $product)
-            <div class="col-md-6">
-            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="product-image custom-image-size">
-            </div>
-            <div class="col-md-6">
-                <div class="d-flex justify-content-between align-items-center spacing-bottom">
-                    <h1>{{ $product->name }}</h1>
-                    <div class="d-flex align-items-center">
-                        <button class="chat-button">Chat toko</button>
-                    </div>
+    @include('/layout/navbar')
+    <main>
+        <div class="container">
+            <div class="row spacing-bottom">
+                <div class="col-md-6">
+                    <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="product-image custom-image-size">
                 </div>
-                <p class="spacing-bottom">{{ $product->description }}</p>
-                <div class="d-flex justify-content-between align-items-center spacing-bottom">
-                    <h2 class="me-3">Rp{{ number_format($product->price, 0, ',', '.') }}/Kg</h2>
-                    <a href="/review" class="text-decoration-none text-dark">
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-between align-items-center spacing-bottom">
+                        <h1>{{ $product->name }}</h1>
                         <div class="d-flex align-items-center">
-                            <span class="rating">
-                                {!! str_repeat('<span class="filled">★</span>', $product->rating) !!}
-                                {!! str_repeat('★', 5 - $product->rating) !!}
-                            </span>
-                            <span>{{ $product->review }} ulasan</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="my-3 d-flex justify-content-between align-items-center spacing-bottom">
-                    <div class="quantity-container">
-                        <label for="quantity">Stok: {{ $product->stock }} Kg</label>
-                        <div class="d-flex align-items-center ms-2">
-                            <button id="decrement" class="btn btn-outline">-</button>
-                            <input type="text" id="quantity" value="1" class="form-control mx-2" style="width: 50px; text-align: center;">
-                            <button id="increment" class="btn btn-outline">+</button>
+                            <button class="chat-button">Chat toko</button>
                         </div>
                     </div>
-                    <span class="favorite-icon">❤</span>
-                </div>
-                <div class="subtotal-container spacing-bottom">
-                    <h3>Subtotal:</h3>
-                    <h3 id="subtotal">Rp{{ number_format($product->price, 0, ',', '.') }}</h3>
-                </div>
-                <div class="button-container">
-                    <button class="add-to-cart-button">Tambahkan ke Keranjang</button>
-                </div>
-                <div class="button-container">
-                    <button class="buy-now-button">Beli Langsung</button>
+                    <p class="spacing-bottom">{{ $product->description }}</p>
+                    <div class="d-flex justify-content-between align-items-center spacing-bottom">
+                        <h2 class="me-3">Rp{{ number_format($product->price, 0, ',', '.') }}/Kg</h2>
+                        <a href="/review/{{ $product->id }}" class="text-decoration-none text-dark">
+                            <div class="d-flex align-items-center">
+                                <span class="rating">
+                                    {!! str_repeat('<span class="filled">★</span>', $product->rating) !!}
+                                    {!! str_repeat('★', 5 - $product->rating) !!}
+                                </span>
+                                <span>({{ $reviews->count() }}) ulasan</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="my-3 d-flex justify-content-between align-items-center spacing-bottom">
+                        <div class="quantity-container">
+                            <label for="quantity">Stok: {{ $product->stock }} Kg</label>
+                            <div class="d-flex align-items-center ms-2">
+                                <button id="decrement" class="btn btn-outline">-</button>
+                                <input type="text" id="quantity" value="1" class="form-control mx-2" style="width: 50px; text-align: center;">
+                                <button id="increment" class="btn btn-outline">+</button>
+                            </div>
+                        </div>
+                        <span class="favorite-icon">❤</span>
+                    </div>
+                    <div class="subtotal-container spacing-bottom">
+                        <h3>Subtotal:</h3>
+                        <h3 id="subtotal">Rp{{ number_format($product->price, 0, ',', '.') }}</h3>
+                    </div>
+                    <div class="button-container">
+                        <button class="add-to-cart-button">Tambahkan ke Keranjang</button>
+                    </div>
+                    <div class="button-container">
+                        <button class="buy-now-button">Beli Langsung</button>
+                    </div>
                 </div>
             </div>
-        @endforeach
+
+            <div class="review-container">
+                <h2>Ulasan Produk</h2>
+                @foreach ($reviews as $review)
+                <div class="review-item">
+                    <div class="review-user">{{ $review->user->name }}</div>
+                    <div class="review-comment">{{ $review->comment }}</div>
+                </div>
+                @endforeach
+            </div>
+
         </div>
-    </div>
-</main>
-<script>
+
+    </main>
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
         const decrementButton = document.getElementById('decrement');
         const incrementButton = document.getElementById('increment');
         const quantityInput = document.getElementById('quantity');
         const subtotalElement = document.getElementById('subtotal');
         const price = {{ $product->price }}; // Mendapatkan harga produk
-        const stock = {{ $product->stock }}; // Mendapatkan stok produk
+        const stock = {{ $product->stock }};
+        const addToCartButton = document.querySelector('.add-to-cart-button');
+        const buyNowButton = document.querySelector('.buy-now-button');
 
         function updateSubtotal() {
             const quantity = parseInt(quantityInput.value);
@@ -233,7 +235,68 @@
             }
             updateSubtotal();
         });
+
+        addToCartButton.addEventListener('click', function() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const productId = {{ $product->id }};
+            const userId = {{ Auth::user()->id }}; // Pastikan user sudah login
+
+            fetch('/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF untuk keamanan
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Produk berhasil ditambahkan ke keranjang!');
+                } else {
+                    alert('Gagal menambahkan produk ke keranjang.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Produk berhasil ditambahkan!!!');
+            });
+        });
+
+        buyNowButton.addEventListener('click', function() {
+            const quantity = parseInt(quantityInput.value);
+            const productId = {{ $product->id }};
+            const userId = {{ Auth::user()->id }}; // Pastikan user sudah login
+
+            fetch('/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Token CSRF untuk keamanan
+                },
+                body: JSON.stringify({
+                    product_id: productId,
+                    quantity: quantity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = '/cart?checkout=true'; // Redirect ke halaman cart dengan parameter checkout=true
+                } else {
+                    alert('Gagal menambahkan produk ke keranjang.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Produk berhasil ditambahkan!!!');
+                window.location.href = '/cart?checkout=true'; // Redirect ke halaman cart dengan parameter checkout=true
+            });
+        });
     });
-</script>
+    </script>
 </body>
 </html>

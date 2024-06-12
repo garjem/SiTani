@@ -114,7 +114,7 @@
                 @foreach ($products as $product)
                 <div class="col">
                     <div class="card h-100">
-                        <a href="{{ url('/product', $product->id) }}" class="card-link">
+                        <a href="{{ url('/detailproduk', $product->id) }}" class="card-link">
                             <img src="{{ asset($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
                         </a>
                         <div class="card-body text-start">

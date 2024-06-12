@@ -12,10 +12,11 @@ class Review extends Model
     protected $fillable = [
         'comment',
         'status',
-        'product_id',
+        'user_id',
         'order_item_id',
         'order_id',
-        'user_id',
+        'product_id',
+        'created_at',
     ];
 
     public function orderItem()

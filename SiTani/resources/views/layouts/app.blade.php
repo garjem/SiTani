@@ -39,6 +39,7 @@
         }
         .modal-header, .modal-footer {
             border: none;
+            background-color: #f8f9fa;
         }
         .form-control:focus {
             border-color: #0d9488;

@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Review;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class DetailProdukController extends Controller
 {
-    public function index(){
-        $products = Product::all();
-        return view('detailproduk', compact('products'));
+    public function show($id)
+    {
+        $product = Product::findOrFail($id); // Mengambil produk berdasarkan ID atau gagal jika tidak ditemukan
+        $reviews = Review::where('product_id', $id)->get(); // Mengambil ulasan berdasarkan ID produk
+        return view('detailproduk', compact('product', 'reviews'));
     }
 }

@@ -139,7 +139,7 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="loginDropdown">
                     <a class="dropdown-item" href="/login">User</a>
                     <a class="dropdown-item" href="#">Mitra</a>
-                    <a class="dropdown-item" href="#">Admin</a>
+                    <a class="dropdown-item" href="dashboardadmin">Admin</a>
                 </div>
             </li>
         </ul>

@@ -2,17 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\DetailProdukController;
 use App\Http\Controllers\faqController;
-
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\reviewController;
-use App\Http\Controllers\artikelController;
-
 use App\Http\Controllers\ChatController;
 
+use App\Http\Controllers\reviewController;
+use App\Http\Controllers\artikelController;
 use App\Http\Controllers\BelanjaController;
+
 use App\Http\Controllers\ContactController;
+
+use App\Http\Controllers\WorkshopController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DetailProdukController;
 
 
 
@@ -27,8 +28,10 @@ Route::get('/', function () {
 
 Route::get('/belanja',[BelanjaController::class,'index']);
 Route::get('/Artikel',[artikelController::class,'index']);
+Route::get('/workshop',[WorkshopController::class,'index']);
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
-
+Route::get('/detailarticle/{id}', [artikelController::class, 'show']);
+Route::get('/detailworkshop/{id}', [WorkshopController::class, 'show']);
 
 Auth::routes();
 Route::get('/editProfile' , [\App\Http\Controllers\LandingController::class , 'editProfile'])->name('editProfile');
@@ -38,13 +41,16 @@ Route::get('/Faq', [faqController::class, 'index'])->name('Faq');
 Route::get('/FaqAdmin', [faqController::class, 'faqAdmin'])->name('FaqAdmin');
 Route::post('/inputFaq', [faqController::class, 'create'])->name('inputFaq');
 Route::get('/deleteFaq/{id}', [faqController::class, 'delete'])->name('deleteFaq');
-Route::get('/review', [reviewController::class, 'viewReview'])->name('review');
+// Route::get('/review', [reviewController::class, 'viewReview'])->name('review');
+Route::get('/review/{id}', [ReviewController::class, 'show']);
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/detailproduk', [DetailProdukController::class, 'index']);
+Route::get('/detailproduk/{id}', [DetailProdukController::class, 'show'])->name('detailproduk.show');
+
 Route::post('/cart/add', [\App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
 Route::get('/cart' , [\App\Http\Controllers\CartController::class , 'index'])->name('cart');
 Route::get('/cartv2' , [\App\Http\Controllers\CartController::class , 'index'])->name('cartv2');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SiTani - Article</title>
+    <title>SiTani - Workshop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .search-container {
@@ -111,21 +111,21 @@
     
         <div class="container text-center">
             <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
-                @foreach ($articles as $article)
+                @foreach ($workshops as $workshop)
                 <div class="col">
                     <div class="card h-100">
-                        <a href="{{ url('/detailarticle', $article->id) }}" class="card-link">
-                            <img src="{{ asset($article->image) }}" class="card-img-top" alt="{{ $article->title }}">
+                        <a href="{{ url('/detailworkshop', $workshop->id) }}" class="card-link">
+                            <img src="{{ asset($workshop->image) }}" class="card-img-top" alt="{{ $workshop->title }}">
                         </a>
                         <div class="card-body text-start">
-                            <h5 class="card-title">{{ $article->title }}</h5>
+                            <h5 class="card-title">{{ $workshop->title }}</h5>
                             <p class="card-text">
-                                {{ Str::limit($article->content, 80, '...') }}
-                                @if (strlen($article->content) > 100)
+                                {{ Str::limit($workshop->description, 80, '...') }}
+                                @if (strlen($workshop->description) > 100)
                                     <span class="show-more">more</span>
                                 @endif
                             </p>
-                            <p class="full-text" style="display: none;">{{ $article->content }} <span class="show-less">less</span></p>
+                            <p class="full-text" style="display: none;">{{ $workshop->description }} <span class="show-less">less</span></p>
                         </div>
                     </div>
                 </div>
