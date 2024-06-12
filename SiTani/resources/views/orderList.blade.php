@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@
 </head>
 <body>
     @extends('layouts.app')
-
+    @include('/layout/navbar')
     @section('content')
         <div class="section p-5">
             <div class="card m-5 p-5">
