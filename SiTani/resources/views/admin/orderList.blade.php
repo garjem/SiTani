@@ -1,24 +1,47 @@
-
 @extends('admin.mainadmin')
-@section('content')
-    <div class="row m-4">
-        <div class="card p-3">
-            <h2 class="m-3">List Order</h2>
-
-
-            <table class="table" id="table-ow">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>User</th>
-                    <th>Bukti Transfer</th>
-                    <th>Status</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($orders as $order)
+@section('Title','dashboard')
+@section('Content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .modal-header, .modal-footer {
+            background-color: #f8f9fa;
+        }
+        .btn-custom {
+            background-color: #ff4081;
+            color: white;
+        }
+        .btn-custom-secondary {
+            background-color: #757575;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+        <div class="section p-5">
+            <div class="card m-5 p-5">
+                <h2 class="mb-4">Order List</h2> <!-- Added heading -->
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>User</th>
+                        <th>Bukti Transfer</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($orders as $order)
                     <tr>
                         <td>{{ $order->id }}</td>
                         <td>{{ $order->user->name }}</td>
@@ -87,16 +110,21 @@
                     </div>
                 </div>
             @endforeach
-
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection
 
-@push('script')
+    @push('script')
     <script>
         let table = new DataTable('#table-ow', {
             // options
         });
 
     </script>
-@endpush
+    @endpush
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
