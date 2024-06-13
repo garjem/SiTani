@@ -255,14 +255,14 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('Produk berhasil ditambahkan ke keranjang!');
+
                 } else {
                     alert('Gagal menambahkan produk ke keranjang.');
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Produk berhasil ditambahkan!!!');
+
             });
         });
 
@@ -292,7 +292,7 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Produk berhasil ditambahkan!!!');
+
                 window.location.href = '/cart?checkout=true'; // Redirect ke halaman cart dengan parameter checkout=true
             });
         });
