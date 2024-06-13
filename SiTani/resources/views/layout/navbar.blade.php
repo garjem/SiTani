@@ -23,7 +23,7 @@
                 </li>
             </ul>
         </div>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/cart">
             <img src="{{ asset('/assets/keranjang.png') }}" width="30" height="30">
         </a>
         <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
