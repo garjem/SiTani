@@ -75,6 +75,6 @@ class RegisterController extends Controller
     }
     protected function registered(\Illuminate\Http\Request $request, $user)
     {
-        return redirect('/login');
+        return redirect($this->redirectTo);
     }
 }

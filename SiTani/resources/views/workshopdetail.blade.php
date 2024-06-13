@@ -56,7 +56,7 @@
             </div>
             <div class="col-md-4">
                 <div class="info-box">
-                    <h4>workshopp Info</h4>
+                    <h4>workshop Info</h4>
                     <p><strong>{{ \Carbon\Carbon::parse($workshopp->start_time)->isoFormat('dddd, D MMMM YYYY') }}</strong></p>
                     <p>{{ \Carbon\Carbon::parse($workshopp->start_time)->format('H:i') }}-{{ \Carbon\Carbon::parse($workshopp->end_time)->format('H:i') }}</p>
                     <p>Gedung Serba Guna Bandung <a href="#">Maps</a></p>
