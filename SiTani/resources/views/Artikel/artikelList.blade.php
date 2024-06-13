@@ -36,17 +36,6 @@
             margin-left: 10px;
         }
 
-        .btn-heart img {
-            width: 24px;
-            height: 24px;
-        }
-        .btn-heart {
-            background: none;
-            border: none;
-            outline: none;
-            cursor: pointer;
-        }
-
         .container .row {
             margin-top: 20px;
         }
@@ -104,9 +93,6 @@
                 <input class="form-control me-2" type="search" placeholder="Cari Belanja..." aria-label="Search">
             </div>
             <button class="btn btn-outline-success me-2" type="submit">Search</button>
-            <button class="btn-heart" type="button">
-                <img src="heart.png" alt="Heart Icon">
-            </button>
         </form>
     
         <div class="container text-center">

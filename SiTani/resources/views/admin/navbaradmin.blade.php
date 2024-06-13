@@ -36,27 +36,25 @@
         <a class="nav-link" href="/dashboardproduk">Produk</a>
       </li>
       <li class="nav-item active">
+        <a class="nav-link" href="/admin/orderlist">Order List</a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="/dashboardworkshop">Workshop</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="dashboardartikel">Artikel</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/dashboardmitra">Mitra</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/admin/orderlist">Order List</a>
-      </li>
+      
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item dropstart">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Profil</a>
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <img src="{{ asset('/assets/profile.png') }}" width="30" height="30" class="rounded-circle">
+        </a>
         <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/editProfile">Ubah Profil</a></li>
             <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Pengaturan</a></li>
-            <li><a class="dropdown-item" href="#">FAQ</a></li>
-            <li><a class="dropdown-item" href="#">Pengajuan Mitra</a></li>
-            <li><a class="dropdown-item text-danger" href="#">Keluar</a></li>
+            <li><a class="dropdown-item" href="/FaqAdmin">FAQ</a></li>
         </ul>
       </li>
     </ul>

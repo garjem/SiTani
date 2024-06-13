@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-green">
+    <a class="navbar-brand" href="#">
+        <img src="{{ URL('img/SiTani.png') }}" alt="SiTani"> <!-- Ganti logo_perusahaan.png dengan nama file logo perusahaan Anda -->
+    </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav mx-auto nav-underline">
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboardadmin">User</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboardproduk">Produk</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboardworkshop">Workshop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboardartikel">Artikel</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin/orderlist">Order List</a>
+          </li>
+        </ul>
+        </div>
+        <a class="navbar-brand" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <img src="{{ asset('/assets/profile.png') }}" width="30" height="30">
+        </a>
+    </div>
+</nav>

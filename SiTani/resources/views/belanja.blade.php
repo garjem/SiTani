@@ -104,9 +104,9 @@
                 <input class="form-control me-2" type="search" placeholder="Cari Belanja..." aria-label="Search">
             </div>
             <button class="btn btn-outline-success me-2" type="submit">Search</button>
-            <button class="btn-heart" type="button">
+            <a href="/wishlist" class="btn-heart">
                 <img src="heart.png" alt="Heart Icon">
-            </button>
+            </a>
         </form>
     
         <div class="container text-center">

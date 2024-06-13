@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <img src="{{ URL('/img/faq.png') }}">
+                    <img src="{{ URL('/img/faq.png') }}" class="btn-faq">
                 </div>
 
                                 </div> <!-- awal Modal -->

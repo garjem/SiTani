@@ -7,6 +7,7 @@
 
 @section('Content')
 <body>
+    @include('layout.navbar')
     <div class="dropdwon">
         <div class="d-flex justify-content-center">
             <div class="my-xxl-5">

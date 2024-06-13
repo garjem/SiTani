@@ -23,22 +23,28 @@
             <tr>
               <th>ID</th>
               <th>Judul</th>
-              <th>Tanggal</th>
-              <th>Penyelenggara</th>
+              <th>Deskripsi</th>
+              <th>Mulai</th>
+              <th>Selesai</th>
+              <th>Kuota</th>
               <th>Aksi</th>
             </tr>
           </thead>
           <tbody>
+          @foreach ($workshops as $workshop)
             <tr>
-              <td>1</td>
-              <td>Tumbuhan yang Cocok untuk Bertani</td>
-              <td>9 Mei 2024</td>
-              <td>Wincorp</td>
+              <td>{{$workshop->id}}</td>
+              <td>{{$workshop->title}}</td>
+              <td>{{$workshop->description}}</td>
+              <td>{{$workshop->start_time}}</td>
+              <td>{{$workshop->end_time}}</td>
+              <td>{{$workshop->capacity}}</td>
               <td><button class="btn btn-primary">Ubah</button>
               <button class="btn btn-danger">Hapus</button></td>
             </tr>
             <!-- Tambahkan data pelanggan lainnya di sini -->
           </tbody>
+          @endforeach
         </table>
       </div>
     </div>

@@ -81,12 +81,15 @@ Route::get('/dashboardmitra', function () {
 Route::get('/dashboardproduk', function () {
     return view('admin.dashboardproduk'); 
 });  
+Route::get('/dashboardworkshop', function () {
+    return view('admin.dashboardworkshop'); 
+});  
 
 Route::get('/dashboardadmin',[DashboardController::class,'index']);
 Route::get('/dashboardartikel',[DashboardController::class,'index1']);
 Route::get('/dashboardmitra', [DashboardController::class,'index2']);
 Route::get('/dashboardproduk', [DashboardController::class,'index3']);
-Route::get('/dashboardworkshop', [DashboardController::class.'index4']);
+Route::get('/dashboardworkshop', [DashboardController::class,'index4']);
 
 Route::get('/wishlist', function () {
     return view('wishlist'); 

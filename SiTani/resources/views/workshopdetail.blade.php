@@ -9,7 +9,7 @@
         body {
             background-color: #f5f5f5;
             padding-top: 70px; /* Adjust the padding based on the height of your navbar */
-            padding-bottom: 30px
+            padding-bottom: 30px;
         }
         .container {
             margin-top: 50px;
@@ -33,9 +33,15 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            display: block;
+            width: 100%; /* Make the button full width */
+            text-align: center;
+            text-decoration: none; /* Remove underline */
         }
         .register-btn:hover {
             background-color: #45a049;
+            color: white; /* Keep text color white on hover */
+            text-decoration: none; /* Ensure underline does not appear on hover */
         }
     </style>
 </head>
@@ -52,7 +58,7 @@
                 <div class="info-box">
                     <h4>workshopp Info</h4>
                     <p><strong>{{ \Carbon\Carbon::parse($workshopp->start_time)->isoFormat('dddd, D MMMM YYYY') }}</strong></p>
-                    <p>{{ \Carbon\Carbon::parse($workshopp->start_time)->format('H.i') }}-{{ \Carbon\Carbon::parse($workshopp->end_time)->format('H.i') }}</p>
+                    <p>{{ \Carbon\Carbon::parse($workshopp->start_time)->format('H:i') }}-{{ \Carbon\Carbon::parse($workshopp->end_time)->format('H:i') }}</p>
                     <p>Gedung Serba Guna Bandung <a href="#">Maps</a></p>
                     <p>Kapasitas Tersisa: {{ $workshopp->capacity }}</p>
                     <a href="https://wa.me/6281287157805" class="register-btn">Daftar</a>

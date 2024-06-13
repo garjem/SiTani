@@ -29,8 +29,10 @@
           <tbody>
             @foreach($articles as $article)
               <tr>
-                <td>{{$article->id}}</td>
+                <td> {{$article->id}}</td>
                 <td>{{$article->title}}</td>
+                <td style="text-align: justify; letter-spacing: 1px;">{{$article->content}}</td>
+                <td><button class="btn btn-primary">Ubah</button>
                 <td><button class="btn btn-danger">Hapus</button></td>
               </tr>
             @endforeach

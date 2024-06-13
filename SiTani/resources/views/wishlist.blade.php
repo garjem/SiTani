@@ -43,6 +43,7 @@
   </style>
 </head>
 <body>
+    @include('/layout/navbar')
     <form class="d-flex w-50 mx-auto mb-5 search-form" role="search">
             <div class="input-group rounded-pill">
                 <input class="form-control me-2" type="search" placeholder="Cari Produk..." aria-label="Search">
@@ -58,8 +59,6 @@
                         <div class="card-body text-start">
                             <h5 class="card-title">Wortel</h5>
                             <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Wortel adalah sayuran umbi yang terkenal dengan warna oranye cerahnya. Mereka kaya akan beta-karoten, serat, dan vitamin, terutama vitamin A.</p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
                         </div>
                     </div>
                 </div>
@@ -69,8 +68,6 @@
                         <div class="card-body text-start">
                             <h5 class="card-title">Jengkol</h5>
                             <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Jengkol termasuk suku polong-polongan. Buahnya berupa polong dan bentuknya gepeng berbelit membentuk spiral, berwarna lembayung tua.</p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
                         </div>
                     </div>
                 </div>
@@ -80,8 +77,6 @@
                         <div class="card-body text-start">
                             <h5 class="card-title">Buncis</h5>
                             <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Buncis, adalah sejenis polong-polongan yang dapat dimakan dari berbagai kultivar Phaseolus vulgaris. Buah, biji, dan daunnya dimanfaatkan.</p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
                         </div>
                     </div>
                 </div>
@@ -91,8 +86,6 @@
                         <div class="card-body text-start">
                             <h5 class="card-title">Petai</h5>
                             <p class="card-text text-justify" style="text-align: justify; letter-spacing: 1px;">Petai, pete, atau mlanding merupakan pohon tahunan tropika dari suku polong-polongan, anak-suku petai-petaian. Tumbuhan ini tersebar luas di Nusantara bagian barat.</p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                            <a href="#" class="btn btn-danger">Hapus</a>
                         </div>
                     </div>
                 </div>

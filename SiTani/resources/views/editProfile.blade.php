@@ -84,9 +84,6 @@
             </div>
             <h5 class="card-title">{{ Auth::user() ? Auth::user()->name : 'User' }}</h5>
             <button type="button" class="btn btn-block" data-toggle="modal" data-target="#profileModal">Ubah Profil</button>
-            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#settingsModal">Pengaturan</button>
-            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#faqModal">Frequently Asked Question</button>
-            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#partnerModal">Pengajuan Mitra</button>
             <button type="button" class="btn btn-block" data-toggle="modal" data-target="#logoutModal">Keluar</button>
         </div>
     </div>
@@ -131,59 +128,6 @@
         </div>
     </div>
 
-    <!-- Settings Modal -->
-    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="settingsModalLabel">Pengaturan</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Pengaturan content here -->
-                    Pengaturan akan ditambahkan di sini.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ Modal -->
-    <div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="faqModalLabel">Frequently Asked Question</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- FAQ content here -->
-                    Pertanyaan yang Sering Diajukan akan ditambahkan di sini.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Partner Modal -->
-    <div class="modal fade" id="partnerModal" tabindex="-1" role="dialog" aria-labelledby="partnerModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="partnerModalLabel">Pengajuan Mitra</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Pengajuan Mitra content here -->
-                    Pengajuan Mitra akan ditambahkan di sini.
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Logout Modal -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
